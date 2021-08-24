@@ -1,0 +1,27 @@
+@import '~ui-design-web-components/scss/variables';
+@import '~ui-design-web-components/scss/mixins';
+
+:host {
+  display: block;
+  width: 100%;
+
+  .container {
+    max-width: 1320px;
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: $c-light;
+  }
+
+  .smartphone-only {
+    @include for-desktop {
+      display: none !important;
+    }
+  }
+  .desktop-only {
+    @include for-mobile {
+      display: none !important;
+    }
+  }
+}

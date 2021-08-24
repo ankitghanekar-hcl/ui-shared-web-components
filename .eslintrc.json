@@ -1,0 +1,6 @@
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["prettier", "prettier/@typescript-eslint", "plugin:@stencil/recommended"]
+}
