@@ -1,4 +1,4 @@
-@import '~ui-design-web-components/scss/variables';
+@import '~design-web-components/scss/variables';
 
 :host {
   display: block;
@@ -54,13 +54,11 @@
         align-items: center;
         .account {
           margin-right: 15px;
-          #Svg_avatar-user {
-            width: 25px;
-            color: $c-primary;
-          }
+          color: $c-primary;
         }
         .cart-bag {
           position: relative;
+          color: $c-primary;
           .cart-count {
             background: #000;
             color: $c-white;
@@ -72,13 +70,6 @@
             top: -7px;
             left: -8px;
             border: 1px solid #fff;
-          }
-          #Svg_bag {
-            width: 31px;
-            color: $c-primary;
-            .whiteFill {
-              fill: $c-white;
-            }
           }
         }
         .account-info {
@@ -94,15 +85,7 @@
         }
       }
     }
-    .sf-header__search {
-      display: block;
-      width: 93%;
-      margin: 0 auto;
-      background: #f3f3f3;
-      border-radius: 25px;
-      padding: 0 17px;
-      margin-top: 6px;
-    }
+
     aside.smartphone-only {
       display: flex;
       background: #fff;

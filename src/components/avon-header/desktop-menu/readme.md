@@ -18,7 +18,9 @@
 ### Depends on
 
 - [search-bar](../search-bar)
-- avon-link
+- ui-button
+- ui-icon
+- ui-link
 - [category-nav](../category-nav)
 
 ### Graph
@@ -26,9 +28,14 @@
 ```mermaid
 graph TD;
   desktop-menu --> search-bar
-  desktop-menu --> avon-link
+  desktop-menu --> ui-button
+  desktop-menu --> ui-icon
+  desktop-menu --> ui-link
   desktop-menu --> category-nav
-  category-nav --> avon-link
+  search-bar --> ui-textbox
+  search-bar --> ui-button
+  search-bar --> ui-icon
+  category-nav --> ui-link
   avon-header --> desktop-menu
   style desktop-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```

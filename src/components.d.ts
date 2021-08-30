@@ -13,9 +13,6 @@ export namespace Components {
   interface AvonHeader {
     content: any;
   }
-  interface AvonTopbar {
-    settings: any;
-  }
   interface CategoryNav {
     categories: any[];
   }
@@ -28,6 +25,9 @@ export namespace Components {
     settings: any;
   }
   interface SearchBar {}
+  interface TopBar {
+    settings: any;
+  }
 }
 declare global {
   interface HTMLAvonFooterElement extends Components.AvonFooter, HTMLStencilElement {}
@@ -39,11 +39,6 @@ declare global {
   var HTMLAvonHeaderElement: {
     prototype: HTMLAvonHeaderElement;
     new (): HTMLAvonHeaderElement;
-  };
-  interface HTMLAvonTopbarElement extends Components.AvonTopbar, HTMLStencilElement {}
-  var HTMLAvonTopbarElement: {
-    prototype: HTMLAvonTopbarElement;
-    new (): HTMLAvonTopbarElement;
   };
   interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {}
   var HTMLCategoryNavElement: {
@@ -65,14 +60,19 @@ declare global {
     prototype: HTMLSearchBarElement;
     new (): HTMLSearchBarElement;
   };
+  interface HTMLTopBarElement extends Components.TopBar, HTMLStencilElement {}
+  var HTMLTopBarElement: {
+    prototype: HTMLTopBarElement;
+    new (): HTMLTopBarElement;
+  };
   interface HTMLElementTagNameMap {
     'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
-    'avon-topbar': HTMLAvonTopbarElement;
     'category-nav': HTMLCategoryNavElement;
     'desktop-menu': HTMLDesktopMenuElement;
     'mobile-menu': HTMLMobileMenuElement;
     'search-bar': HTMLSearchBarElement;
+    'top-bar': HTMLTopBarElement;
   }
 }
 declare namespace LocalJSX {
@@ -82,9 +82,6 @@ declare namespace LocalJSX {
   }
   interface AvonHeader {
     content?: any;
-  }
-  interface AvonTopbar {
-    settings?: any;
   }
   interface CategoryNav {
     categories?: any[];
@@ -98,14 +95,17 @@ declare namespace LocalJSX {
     settings?: any;
   }
   interface SearchBar {}
+  interface TopBar {
+    settings?: any;
+  }
   interface IntrinsicElements {
     'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
-    'avon-topbar': AvonTopbar;
     'category-nav': CategoryNav;
     'desktop-menu': DesktopMenu;
     'mobile-menu': MobileMenu;
     'search-bar': SearchBar;
+    'top-bar': TopBar;
   }
 }
 export { LocalJSX as JSX };
@@ -114,11 +114,11 @@ declare module '@stencil/core' {
     interface IntrinsicElements {
       'avon-footer': LocalJSX.AvonFooter & JSXBase.HTMLAttributes<HTMLAvonFooterElement>;
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
-      'avon-topbar': LocalJSX.AvonTopbar & JSXBase.HTMLAttributes<HTMLAvonTopbarElement>;
       'category-nav': LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
       'desktop-menu': LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
       'mobile-menu': LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;
       'search-bar': LocalJSX.SearchBar & JSXBase.HTMLAttributes<HTMLSearchBarElement>;
+      'top-bar': LocalJSX.TopBar & JSXBase.HTMLAttributes<HTMLTopBarElement>;
     }
   }
 }

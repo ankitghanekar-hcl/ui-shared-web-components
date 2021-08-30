@@ -1,12 +1,12 @@
-@import '~ui-design-web-components/scss/variables';
-@import '~ui-design-web-components/scss/mixins';
+@import '~design-web-components/scss/variables';
+@import '~design-web-components/scss/mixins';
 
 :host {
   display: block;
   width: 100%;
 
   .container {
-    max-width: 1320px;
+    padding: 0 1.5rem;
     display: flex;
     height: 2.5rem;
     align-items: center;

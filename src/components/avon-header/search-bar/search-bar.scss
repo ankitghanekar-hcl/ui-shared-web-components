@@ -1,5 +1,5 @@
-@import '~ui-design-web-components/scss/variables';
-@import '~ui-design-web-components/scss/mixins';
+@import '~design-web-components/scss/variables';
+@import '~design-web-components/scss/mixins';
 
 :host {
   display: block;
@@ -13,7 +13,6 @@
     margin-top: 0.5rem;
     margin-right: 2.2rem;
     margin-left: 2.2rem;
-    border: 1px solid #ccc7c7;
     height: 2rem;
 
     @include for-desktop {

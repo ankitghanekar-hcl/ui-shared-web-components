@@ -17,6 +17,10 @@ export const config: Config = {
     {
       type: 'dist-hydrate-script',
     },
+    {
+      type: 'www',
+      serviceWorker: null, // disable service workers
+    },
   ],
   plugins: [
     sass({

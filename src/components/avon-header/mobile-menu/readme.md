@@ -17,15 +17,20 @@
 
 ### Depends on
 
-- avon-link
+- ui-icon
+- ui-link
 - [search-bar](../search-bar)
 
 ### Graph
 
 ```mermaid
 graph TD;
-  mobile-menu --> avon-link
+  mobile-menu --> ui-icon
+  mobile-menu --> ui-link
   mobile-menu --> search-bar
+  search-bar --> ui-textbox
+  search-bar --> ui-button
+  search-bar --> ui-icon
   avon-header --> mobile-menu
   style mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```

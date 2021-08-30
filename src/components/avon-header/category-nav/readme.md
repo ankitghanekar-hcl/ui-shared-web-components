@@ -16,13 +16,13 @@
 
 ### Depends on
 
-- avon-link
+- ui-link
 
 ### Graph
 
 ```mermaid
 graph TD;
-  category-nav --> avon-link
+  category-nav --> ui-link
   desktop-menu --> category-nav
   style category-nav fill:#f9f,stroke:#333,stroke-width:4px
 ```

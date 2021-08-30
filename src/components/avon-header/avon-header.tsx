@@ -1,5 +1,6 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import 'ui-design-web-components';
+import 'design-web-components';
+import 'ui-icons';
 
 @Component({
   tag: 'avon-header',
@@ -11,15 +12,19 @@ export class AvonHeader {
   @State() data;
 
   componentWillLoad() {
-    const b = new Buffer(this.content, 'base64');
-    const str = b.toString('utf8');
+    let str;
+    if (typeof Buffer !== 'undefined') {
+      const b = new Buffer(this.content, 'base64');
+      str = b.toString('utf8');
+    } else str = atob(this.content);
+
     this.data = JSON.parse(str);
   }
   render() {
     return (
-      <div>
+      <ui-box_container>
         <div class="container desktop-only">
-          <avon-topbar settings={this.data.settings} />
+          <top-bar settings={this.data.settings} />
         </div>
         <div class="header-block">
           <div class="smartphone-only">
@@ -29,7 +34,7 @@ export class AvonHeader {
             <desktop-menu data={this.data.categories} settings={this.data.settings} />
           </div>
         </div>
-      </div>
+      </ui-box_container>
     );
   }
 }

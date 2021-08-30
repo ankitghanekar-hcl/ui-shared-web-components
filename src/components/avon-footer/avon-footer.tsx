@@ -1,5 +1,5 @@
 import { Component, Prop, h, State } from '@stencil/core';
-import 'ui-design-web-components';
+import 'design-web-components';
 
 @Component({
   tag: 'avon-footer',
@@ -12,8 +12,12 @@ export class AvonFooter {
   @State() data;
 
   componentWillLoad() {
-    const b = new Buffer(this.content, 'base64');
-    const str = b.toString('utf8');
+    let str;
+    if (typeof Buffer !== 'undefined') {
+      const b = new Buffer(this.content, 'base64');
+      str = b.toString('utf8');
+    } else str = atob(this.content);
+
     this.data = JSON.parse(str);
   }
   render() {
@@ -27,12 +31,12 @@ export class AvonFooter {
                 <ul class="footer-links">
                   {this.data[key].data.map(item => (
                     <li key={item['@name']}>
-                      <avon-link link={item.listItemURL}>
-                        <div class="imgWithText" slot="link_slot">
-                          {item.imageUrl && <img src={item.imageUrl} width="32" height="32" />}
+                      <ui-link link={item.listItemURL}>
+                        <div class="imgWithText">
+                          {item.imageUrl && <ui-img src={item.imageUrl} width="32" height="32" />}
                           <div>{item.listItemName}</div>
                         </div>
-                      </avon-link>
+                      </ui-link>
                     </li>
                   ))}
                 </ul>
@@ -47,14 +51,14 @@ export class AvonFooter {
               <small>{this.data.footerBaseSection?.copyRightText}</small>
             </div>
             <div class="col">
-              <avon-link link={this.data.footerBaseSection?.helpURL}>
-                <span slot="link_slot">{this.data.footerBaseSection?.helpText}</span>
-              </avon-link>
+              <ui-link link={this.data.footerBaseSection?.helpURL} color="#546264" fontsize="1rem">
+                <small>{this.data.footerBaseSection?.helpText}</small>
+              </ui-link>
             </div>
             <div class="col">
-              <avon-link link={this.data.footerBaseSection?.tncURL}>
-                <span slot="link_slot">{this.data.footerBaseSection?.tncText}</span>
-              </avon-link>
+              <ui-link link={this.data.footerBaseSection?.tncURL} color="#546264" fontsize="1rem">
+                <small>{this.data.footerBaseSection?.tncText}</small>
+              </ui-link>
             </div>
           </div>
         </div>

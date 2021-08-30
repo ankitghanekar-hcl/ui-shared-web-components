@@ -1,13 +1,16 @@
-@import '~ui-design-web-components/scss/variables';
+@import '~design-web-components/scss/variables';
 
 :host {
-  display: block;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 
   .header {
     display: flex;
     box-shadow: 1px 12px 15px -16px grey;
     flex-direction: column;
     justify-content: center;
+    max-width: 976px;
     width: 100%;
 
     &__row {
@@ -15,7 +18,6 @@
       height: 4rem;
       display: flex;
       justify-content: center;
-      position: relative;
     }
 
     &__logo {
@@ -33,18 +35,23 @@
       align-items: center;
       justify-content: flex-end;
     }
+    &-icons {
+      position: relative;
+    }
   }
 
   .wishlistHeader {
     display: flex;
     position: absolute;
-    font-size: 11px;
-    font-weight: 100;
-    color: $text-secondary;
-    font-family: $font-family;
-    right: 20px;
-    text-transform: uppercase;
+    right: 0;
     z-index: 1;
+    span {
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 100;
+      color: $text-secondary;
+      font-family: $font-family;
+    }
   }
 
   .top_navigation_desk {
