@@ -13,6 +13,7 @@ export namespace Components {
   interface AvonHeader {
     content: any;
   }
+  interface BottomNavigation {}
   interface CategoryNav {
     categories: any[];
   }
@@ -39,6 +40,11 @@ declare global {
   var HTMLAvonHeaderElement: {
     prototype: HTMLAvonHeaderElement;
     new (): HTMLAvonHeaderElement;
+  };
+  interface HTMLBottomNavigationElement extends Components.BottomNavigation, HTMLStencilElement {}
+  var HTMLBottomNavigationElement: {
+    prototype: HTMLBottomNavigationElement;
+    new (): HTMLBottomNavigationElement;
   };
   interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {}
   var HTMLCategoryNavElement: {
@@ -68,6 +74,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
+    'bottom-navigation': HTMLBottomNavigationElement;
     'category-nav': HTMLCategoryNavElement;
     'desktop-menu': HTMLDesktopMenuElement;
     'mobile-menu': HTMLMobileMenuElement;
@@ -83,6 +90,7 @@ declare namespace LocalJSX {
   interface AvonHeader {
     content?: any;
   }
+  interface BottomNavigation {}
   interface CategoryNav {
     categories?: any[];
   }
@@ -101,6 +109,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
+    'bottom-navigation': BottomNavigation;
     'category-nav': CategoryNav;
     'desktop-menu': DesktopMenu;
     'mobile-menu': MobileMenu;
@@ -114,6 +123,7 @@ declare module '@stencil/core' {
     interface IntrinsicElements {
       'avon-footer': LocalJSX.AvonFooter & JSXBase.HTMLAttributes<HTMLAvonFooterElement>;
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
+      'bottom-navigation': LocalJSX.BottomNavigation & JSXBase.HTMLAttributes<HTMLBottomNavigationElement>;
       'category-nav': LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
       'desktop-menu': LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
       'mobile-menu': LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;
