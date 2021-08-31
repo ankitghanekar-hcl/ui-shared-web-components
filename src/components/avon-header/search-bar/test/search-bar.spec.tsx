@@ -10,7 +10,12 @@ describe('search-bar', () => {
     expect(page.root).toEqualHtml(`
       <search-bar>
         <mock:shadow-root>
-          <slot></slot>
+          <div class="searchBar">
+           <ui-textbox placeholder="Search for products" usecase="search" width="fullwidth"></ui-textbox>
+           <ui-button class="searchBar__button" shape="text">
+             <ui-icon icon="search" size="20"></ui-icon>
+           </ui-button>
+         </div>
         </mock:shadow-root>
       </search-bar>
     `);

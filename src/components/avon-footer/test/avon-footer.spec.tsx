@@ -20,7 +20,7 @@ describe('avon-footer', () => {
                  <ul class="footer-links">
                    <li>
                      <ui-link link="https://www.shopwithmyrep.co.uk/About-Avon/">
-                       <div class="imgWithText" slot="link_slot">
+                       <div class="imgWithText">
                          <div>
                            About Us
                          </div>
@@ -36,7 +36,7 @@ describe('avon-footer', () => {
                  <ul class="footer-links">
                    <li>
                      <ui-link link="https://www.shopwithmyrep.co.uk/service-pages/returns">
-                       <div class="imgWithText" slot="link_slot">
+                       <div class="imgWithText">
                          <div>
                            Returns Guarantee
                          </div>
@@ -52,7 +52,7 @@ describe('avon-footer', () => {
                  <ul class="footer-links">
                    <li>
                      <ui-link link="https://www.facebook.com/Avonuk">
-                       <div class="imgWithText" slot="link_slot">
+                       <div class="imgWithText">
                          <ui-img height="32" src="https://avon.europe-west1.gcp.storefrontcloud.io/plp/fb.jpg" width="32"></ui-img>
                          <div>
                            All the latest gossip
@@ -73,17 +73,17 @@ describe('avon-footer', () => {
                  </small>
                </div>
                <div class="col">
-                 <ui-link link="https://www.shopwithmyrep.co.uk/help">
-                   <span slot="link_slot">
+                 <ui-link color="#546264" fontsize="1rem" link="https://www.shopwithmyrep.co.uk/help">
+                   <small>
                      Help
-                   </span>
+                   </small>
                  </ui-link>
                </div>
                <div class="col">
-                 <ui-link link="https://www.shopwithmyrep.co.uk/terms-conditions">
-                   <span slot="link_slot">
+                 <ui-link color="#546264" fontsize="1rem" link="https://www.shopwithmyrep.co.uk/terms-conditions">
+                   <small>
                      Terms &amp; Conditions
-                   </span>
+                   </small>
                  </ui-link>
                </div>
              </div>

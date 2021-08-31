@@ -94,7 +94,7 @@ export class MobileMenu {
           </nav>
           <div class="logo">
             <a href="/">
-              <img src={this.settings.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} class="header__logoImage" />
+              <img src={this.settings?.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} class="header__logoImage" />
             </a>
           </div>
           <div class="account-block">

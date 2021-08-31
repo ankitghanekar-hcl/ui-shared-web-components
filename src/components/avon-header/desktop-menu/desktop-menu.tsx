@@ -15,7 +15,7 @@ export class DesktopMenu {
         <div class="header__row">
           <div class="header__logo">
             <a href="/">
-              <img src={this.settings.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} class="header__logoImage" />
+              <img src={this.settings?.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} class="header__logoImage" />
             </a>
           </div>
           <div class="header-actions">

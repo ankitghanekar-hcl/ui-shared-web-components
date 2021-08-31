@@ -12,17 +12,17 @@ export class TopBar {
     return (
       <div class="topbar">
         <div class="rep">
-          <ui-link link="/rep" color="rgb(29, 31, 34)" fontsize=".7em">
-            <span>{this.settings.findRep}</span>
+          <ui-link link="/rep">
+            <span class="topbar-link">{this.settings?.findRep}</span>
           </ui-link>
           <span>&nbsp;|&nbsp;</span>
-          <ui-link link="#" color="rgb(29, 31, 34)" fontsize=".7em">
-            <span>{this.settings.becomeRep}</span>
+          <ui-link link="#">
+            <span class="topbar-link">{this.settings?.becomeRep}</span>
           </ui-link>
         </div>
         <div>
-          <ui-link link="#" color="rgb(29, 31, 34)" fontsize=".7em">
-            <span>{this.settings.loginText}</span>
+          <ui-link link="#">
+            <span class="topbar-link">{this.settings?.loginText}</span>
           </ui-link>
         </div>
       </div>
