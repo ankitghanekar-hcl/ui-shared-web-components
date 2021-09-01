@@ -11,31 +11,32 @@ export class BottomNavigation {
   render() {
     return (
       <div class="navigation-bottom">
-        <div>
-          <ui-link link="/">
-            <ui-button shape="text">
-              <ui-icon icon="home" size="24" />
-            </ui-button>
-            <div>Home</div>
+        <div class="item">
+          <ui-link link="/" class="link">
+            <ui-icon icon="home" size="20" />
+            <div class="label">Home</div>
           </ui-link>
         </div>
-        <div>
+        <div class="item">
           <ui-button shape="text">
-            <ui-icon icon="heart" size="24" />
+            <ui-icon icon="heart" size="20" color="#7f28c4" />
+            <br />
+            <div class="label">Wishlist</div>
           </ui-button>
-          <div>Wishlist</div>
         </div>
-        <div>
+        <div class="item">
           <ui-button shape="text">
-            <ui-icon icon="profile" size="24" />
+            <ui-icon icon="profile" size="20" color="#7f28c4" />
+            <br />
+            <div class="label">Account</div>
           </ui-button>
-          <div>Account</div>
         </div>
-        <div>
+        <div class="item">
           <ui-button shape="text">
-            <ui-icon icon="bag" size="24" />
+            <ui-icon icon="bag" size="23" color="#7f28c4" />
+            <br />
+            <div class="label">Basket</div>
           </ui-button>
-          <div>Basket</div>
         </div>
       </div>
     );
