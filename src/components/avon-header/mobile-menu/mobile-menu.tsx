@@ -8,6 +8,7 @@ import { Component, h, State, Prop } from '@stencil/core';
 export class MobileMenu {
   @Prop() categoryList = [];
   @Prop() settings = null;
+  @Prop() cartCount;
   @State() menuOpen = false;
   @State() subMenuToggle = false;
   @State() menuLeftPosition = '-1000px';
@@ -105,7 +106,7 @@ export class MobileMenu {
               <ui-link link="/cart">
                 <ui-icon icon="bag" size="31" />
               </ui-link>
-              <span class="cart-count">1</span>
+              {this.cartCount && <span class="cart-count">{this.cartCount}</span>}
             </div>
           </div>
         </div>

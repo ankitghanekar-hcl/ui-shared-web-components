@@ -1,6 +1,6 @@
 {
   "name": "shared-web-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -36,6 +36,7 @@
     "@babel/core": "^7.15.0",
     "@stencil/eslint-plugin": "^0.3.1",
     "@stencil/sass": "^1.4.1",
+    "@stencil/store": "^1.4.1",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
@@ -45,7 +46,6 @@
     "@typescript-eslint/parser": "^2.34.0",
     "babel-loader": "^8.2.2",
     "design-web-components": "file:design-web-components-v0.0.1.tgz",
-    "ui-icons": "file:ui-icons-v0.0.1.tgz",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-react": "^7.24.0",
@@ -55,7 +55,8 @@
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
     "puppeteer": "^10.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "ui-icons": "file:ui-icons-v0.0.1.tgz"
   },
   "license": "MIT"
 }

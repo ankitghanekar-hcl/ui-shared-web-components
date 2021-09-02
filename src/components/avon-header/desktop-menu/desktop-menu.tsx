@@ -8,6 +8,8 @@ import { Component, h, Prop } from '@stencil/core';
 export class DesktopMenu {
   @Prop() data = null;
   @Prop() settings = null;
+  @Prop() cartCount;
+  @Prop() wishlistCount;
 
   render() {
     return (
@@ -23,15 +25,14 @@ export class DesktopMenu {
             <div class="header-icons">
               <ui-button class="wishlistHeader" shape="text">
                 <span>
-                  <ui-icon icon="heart" size="12" color="#7f28c4" />
-                  (0)Wishlist
+                  <ui-icon icon="heart" size="12" color="#7f28c4" />({this.wishlistCount})Wishlist
                 </span>
               </ui-button>
               <ui-button shape="text">
                 <div class="miniCart">
                   <ui-icon icon="bag" size="31" />
                   &nbsp;&nbsp;&nbsp;
-                  <span>(0) Shopping Bag</span>
+                  <span>({this.cartCount}) Shopping Bag</span>
                 </div>
               </ui-button>
             </div>

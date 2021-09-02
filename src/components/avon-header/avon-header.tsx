@@ -1,4 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
+import state, { onChange } from '../../store';
 import 'design-web-components';
 import 'ui-icons';
 
@@ -9,7 +10,10 @@ import 'ui-icons';
 })
 export class AvonHeader {
   @Prop() content;
-  @State() data;
+  @State() categories;
+  @State() settings;
+  @State() cartCount = 0;
+  @State() wishlistCount = 0;
 
   componentWillLoad() {
     let str;
@@ -18,20 +22,33 @@ export class AvonHeader {
       str = b.toString('utf8');
     } else str = atob(this.content);
 
-    this.data = JSON.parse(str);
+    const { categories, settings, cart, wishlist } = JSON.parse(str);
+    state.cart = cart;
+    state.wishlist = wishlist;
+    this.categories = categories;
+    this.settings = settings;
+    this.cartCount = cart?.lineItems.length;
+    this.wishlistCount = wishlist?.lineItems.length;
+
+    onChange('cart', value => {
+      this.cartCount = value?.lineItems.length;
+    });
+    onChange('wishlist', value => {
+      this.wishlistCount = value?.lineItems.length;
+    });
   }
   render() {
     return (
       <ui-box_container>
         <div class="container desktop-only">
-          <top-bar settings={this.data.settings} />
+          <top-bar settings={this.settings} />
         </div>
         <div class="header-block">
           <div class="smartphone-only">
-            <mobile-menu categoryList={this.data.categories} settings={this.data.settings} />
+            <mobile-menu categoryList={this.categories} settings={this.settings} cartCount={this.cartCount} />
           </div>
           <div class="desktop-only">
-            <desktop-menu data={this.data.categories} settings={this.data.settings} />
+            <desktop-menu data={this.categories} settings={this.settings} cartCount={this.cartCount} wishlistCount={this.wishlistCount} />
           </div>
         </div>
       </ui-box_container>

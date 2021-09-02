@@ -18,10 +18,13 @@ export namespace Components {
     categories: any[];
   }
   interface DesktopMenu {
+    cartCount: any;
     data: any;
     settings: any;
+    wishlistCount: any;
   }
   interface MobileMenu {
+    cartCount: any;
     categoryList: any[];
     settings: any;
   }
@@ -95,10 +98,13 @@ declare namespace LocalJSX {
     categories?: any[];
   }
   interface DesktopMenu {
+    cartCount?: any;
     data?: any;
     settings?: any;
+    wishlistCount?: any;
   }
   interface MobileMenu {
+    cartCount?: any;
     categoryList?: any[];
     settings?: any;
   }
