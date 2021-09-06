@@ -14,6 +14,7 @@ export namespace Components {
     content: any;
   }
   interface BottomNavigation {}
+  interface CartSidebar {}
   interface CategoryNav {
     categories: any[];
   }
@@ -49,6 +50,11 @@ declare global {
     prototype: HTMLBottomNavigationElement;
     new (): HTMLBottomNavigationElement;
   };
+  interface HTMLCartSidebarElement extends Components.CartSidebar, HTMLStencilElement {}
+  var HTMLCartSidebarElement: {
+    prototype: HTMLCartSidebarElement;
+    new (): HTMLCartSidebarElement;
+  };
   interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {}
   var HTMLCategoryNavElement: {
     prototype: HTMLCategoryNavElement;
@@ -78,6 +84,7 @@ declare global {
     'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
     'bottom-navigation': HTMLBottomNavigationElement;
+    'cart-sidebar': HTMLCartSidebarElement;
     'category-nav': HTMLCategoryNavElement;
     'desktop-menu': HTMLDesktopMenuElement;
     'mobile-menu': HTMLMobileMenuElement;
@@ -94,12 +101,14 @@ declare namespace LocalJSX {
     content?: any;
   }
   interface BottomNavigation {}
+  interface CartSidebar {}
   interface CategoryNav {
     categories?: any[];
   }
   interface DesktopMenu {
     cartCount?: any;
     data?: any;
+    onShowCart?: (event: CustomEvent<void>) => void;
     settings?: any;
     wishlistCount?: any;
   }
@@ -116,6 +125,7 @@ declare namespace LocalJSX {
     'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
     'bottom-navigation': BottomNavigation;
+    'cart-sidebar': CartSidebar;
     'category-nav': CategoryNav;
     'desktop-menu': DesktopMenu;
     'mobile-menu': MobileMenu;
@@ -130,6 +140,7 @@ declare module '@stencil/core' {
       'avon-footer': LocalJSX.AvonFooter & JSXBase.HTMLAttributes<HTMLAvonFooterElement>;
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
       'bottom-navigation': LocalJSX.BottomNavigation & JSXBase.HTMLAttributes<HTMLBottomNavigationElement>;
+      'cart-sidebar': LocalJSX.CartSidebar & JSXBase.HTMLAttributes<HTMLCartSidebarElement>;
       'category-nav': LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
       'desktop-menu': LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
       'mobile-menu': LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;

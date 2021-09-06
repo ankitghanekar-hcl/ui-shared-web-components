@@ -4,10 +4,11 @@
 
 ## Properties
 
-| Property       | Attribute  | Description | Type    | Default |
-| -------------- | ---------- | ----------- | ------- | ------- |
-| `categoryList` | --         |             | `any[]` | `[]`    |
-| `settings`     | `settings` |             | `any`   | `null`  |
+| Property       | Attribute    | Description | Type    | Default     |
+| -------------- | ------------ | ----------- | ------- | ----------- |
+| `cartCount`    | `cart-count` |             | `any`   | `undefined` |
+| `categoryList` | --           |             | `any[]` | `[]`        |
+| `settings`     | `settings`   |             | `any`   | `null`      |
 
 ## Dependencies
 
