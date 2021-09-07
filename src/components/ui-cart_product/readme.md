@@ -6,20 +6,20 @@
 
 | Property          | Attribute         | Description                                     | Type       | Default                   |
 | ----------------- | ----------------- | ----------------------------------------------- | ---------- | ------------------------- |
-| `boxbgcolor`      | `boxbgcolor`      | box bgcolor                                     | `string`   | `"white"`                 |
-| `boxheight`       | `boxheight`       | box height                                      | `string`   | `"300"`                   |
-| `boxwidth`        | `boxwidth`        | box width                                       | `string`   | `"300"`                   |
+| `boxbgcolor`      | `boxbgcolor`      | box bgcolor                                     | `string`   | `'white'`                 |
+| `boxheight`       | `boxheight`       | box height                                      | `string`   | `'300'`                   |
+| `boxwidth`        | `boxwidth`        | box width                                       | `string`   | `'300'`                   |
 | `heading`         | `heading`         | Product Heading                                 | `string`   | `undefined`               |
 | `image`           | `image`           | Image src                                       | `string`   | `undefined`               |
-| `imgalt`          | `imgalt`          | image alt                                       | `string`   | `"src_eg"`                |
-| `imgheight`       | `imgheight`       | image height                                    | `string`   | `"200"`                   |
-| `imgwidth`        | `imgwidth`        | image width                                     | `string`   | `"180"`                   |
+| `imgalt`          | `imgalt`          | image alt                                       | `string`   | `'src_eg'`                |
+| `imgheight`       | `imgheight`       | image height                                    | `string`   | `'200'`                   |
+| `imgwidth`        | `imgwidth`        | image width                                     | `string`   | `'180'`                   |
 | `link`            | `link`            | link                                            | `string`   | `undefined`               |
 | `price`           | `price`           | price                                           | `string`   | `undefined`               |
 | `removeCallback`  | --                | removeCallback works only in Stencil components | `Function` | `undefined`               |
-| `titlecolor`      | `titlecolor`      | titlecolor                                      | `string`   | `"#43464E"`               |
-| `titlefontfamily` | `titlefontfamily` | title fontfamily                                | `string`   | `"Montserrat,sans-serif"` |
-| `titlefontsize`   | `titlefontsize`   | title fontsize                                  | `string`   | `"16px"`                  |
+| `titlecolor`      | `titlecolor`      | titlecolor                                      | `string`   | `'#43464E'`               |
+| `titlefontfamily` | `titlefontfamily` | title fontfamily                                | `string`   | `'Montserrat,sans-serif'` |
+| `titlefontsize`   | `titlefontsize`   | title fontsize                                  | `string`   | `'16px'`                  |
 
 ## Dependencies
 
