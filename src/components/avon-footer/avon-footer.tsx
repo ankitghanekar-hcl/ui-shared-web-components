@@ -1,5 +1,4 @@
 import { Component, Prop, h, State } from '@stencil/core';
-import 'design-web-components';
 
 @Component({
   tag: 'avon-footer',

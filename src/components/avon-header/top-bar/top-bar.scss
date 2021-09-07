@@ -1,4 +1,4 @@
-@import '~design-web-components/scss/variables';
+@import 'scss/variables';
 
 :host {
   display: block;
@@ -7,7 +7,7 @@
 
   .topbar {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     width: 100%;

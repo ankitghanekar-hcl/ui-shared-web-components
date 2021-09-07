@@ -19,7 +19,7 @@
 ### Depends on
 
 - ui-icon
-- ui-link
+- [ui-link](../../ui-link)
 - [search-bar](../search-bar)
 
 ### Graph

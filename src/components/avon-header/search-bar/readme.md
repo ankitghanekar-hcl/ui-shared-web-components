@@ -11,8 +11,8 @@
 
 ### Depends on
 
-- ui-textbox
-- ui-button
+- [ui-textbox](../../ui-textbox)
+- [ui-button](../../ui-button)
 - ui-icon
 
 ### Graph

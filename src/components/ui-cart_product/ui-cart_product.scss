@@ -1,0 +1,22 @@
+@import 'scss/variables';
+
+:host {
+  display: block;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.link {
+  color: $c-text;
+  font-size: $font-size--base;
+}
+
+.remove {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+}

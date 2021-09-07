@@ -16,7 +16,7 @@
 
 ### Depends on
 
-- ui-link
+- [ui-link](../../ui-link)
 
 ### Graph
 
