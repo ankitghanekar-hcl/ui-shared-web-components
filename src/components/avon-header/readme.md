@@ -12,7 +12,7 @@
 
 ### Depends on
 
-- ui-box_container
+- [ui-box_container](../ui-box_container)
 - [top-bar](top-bar)
 - [mobile-menu](mobile-menu)
 - [desktop-menu](desktop-menu)

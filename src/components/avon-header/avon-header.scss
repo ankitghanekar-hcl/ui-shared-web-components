@@ -1,27 +1,27 @@
-@import '~design-web-components/scss/variables';
-@import '~design-web-components/scss/mixins';
+@import 'scss/variables';
+@import 'scss/mixins';
 
 :host {
   display: block;
   width: 100%;
+}
 
-  .container {
-    padding: 0 1.5rem;
-    display: flex;
-    height: 2.5rem;
-    align-items: center;
-    justify-content: center;
-    background-color: $c-light;
-  }
+.container {
+  padding: 0 1.5rem;
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: $c-light;
+}
 
-  .smartphone-only {
-    @include for-desktop {
-      display: none !important;
-    }
+.smartphone-only {
+  @include for-desktop {
+    display: none !important;
   }
-  .desktop-only {
-    @include for-mobile {
-      display: none !important;
-    }
+}
+.desktop-only {
+  @include for-mobile {
+    display: none !important;
   }
 }

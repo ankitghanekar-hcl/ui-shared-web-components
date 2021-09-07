@@ -1,6 +1,6 @@
 {
   "name": "shared-web-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shared web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -45,7 +45,6 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-loader": "^8.2.2",
-    "design-web-components": "file:design-web-components-v0.0.1.tgz",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-react": "^7.24.0",

@@ -4,10 +4,18 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type  | Default |
-| ---------- | ---------- | ----------- | ----- | ------- |
-| `data`     | `data`     |             | `any` | `null`  |
-| `settings` | `settings` |             | `any` | `null`  |
+| Property        | Attribute        | Description | Type  | Default     |
+| --------------- | ---------------- | ----------- | ----- | ----------- |
+| `cartCount`     | `cart-count`     |             | `any` | `undefined` |
+| `data`          | `data`           |             | `any` | `null`      |
+| `settings`      | `settings`       |             | `any` | `null`      |
+| `wishlistCount` | `wishlist-count` |             | `any` | `undefined` |
+
+## Events
+
+| Event      | Description | Type                |
+| ---------- | ----------- | ------------------- |
+| `showCart` |             | `CustomEvent<void>` |
 
 ## Dependencies
 
@@ -18,9 +26,9 @@
 ### Depends on
 
 - [search-bar](../search-bar)
-- ui-button
+- [ui-button](../../ui-button)
 - ui-icon
-- ui-link
+- [ui-link](../../ui-link)
 - [category-nav](../category-nav)
 
 ### Graph

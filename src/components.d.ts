@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import { ModalEvent } from './components/ui-modal/ui-modal';
 export namespace Components {
   interface AvonFooter {
     content: any;
@@ -14,6 +15,7 @@ export namespace Components {
     content: any;
   }
   interface BottomNavigation {}
+  interface CartSidebar {}
   interface CategoryNav {
     categories: any[];
   }
@@ -32,6 +34,247 @@ export namespace Components {
   interface TopBar {
     settings: any;
   }
+  interface UiBox_container {
+    /**
+     * background-color
+     */
+    backgroundcolor: string;
+    /**
+     * display
+     */
+    display: string;
+    /**
+     * height
+     */
+    height: string;
+    /**
+     * Width
+     */
+    width: string;
+  }
+  interface UiButton {
+    color?: 'primary' | 'secondary' | 'clear' | 'light';
+    disabled?: boolean;
+    /**
+     * Button Label
+     */
+    label?: string;
+    shape?: 'full' | 'round' | 'smooth' | 'text';
+    size?: 'large' | 'medium' | 'small';
+    width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
+  }
+  interface UiCart_product {
+    /**
+     * box bgcolor
+     */
+    boxbgcolor: string;
+    /**
+     * box height
+     */
+    boxheight: string;
+    /**
+     * box width
+     */
+    boxwidth: string;
+    /**
+     * Product Heading
+     */
+    heading: string;
+    /**
+     * Image src
+     */
+    image: string;
+    /**
+     * image alt
+     */
+    imgalt: string;
+    /**
+     * image height
+     */
+    imgheight: string;
+    /**
+     * image width
+     */
+    imgwidth: string;
+    /**
+     * link
+     */
+    link: string;
+    /**
+     * price
+     */
+    price: string;
+    /**
+     * removeCallback works only in Stencil components
+     */
+    removeCallback?: Function;
+    /**
+     * titlecolor
+     */
+    titlecolor: string;
+    /**
+     * title fontfamily
+     */
+    titlefontfamily: string;
+    /**
+     * title fontsize
+     */
+    titlefontsize: string;
+  }
+  interface UiHeading {
+    /**
+     * The label
+     */
+    label: string;
+    level?: 'h1' | 'h2' | 'h3';
+  }
+  interface UiImg {
+    /**
+     * alt
+     */
+    alt: string;
+    /**
+     * height
+     */
+    height: string;
+    /**
+     * src
+     */
+    src: string;
+    /**
+     * width
+     */
+    width: string;
+  }
+  interface UiLabel {
+    /**
+     * color
+     */
+    color: string;
+    /**
+     * font-family
+     */
+    fontfamily: string;
+    /**
+     * font-size
+     */
+    fontsize: string;
+    /**
+     * font-weight
+     */
+    fontweight: string;
+    /**
+     * Label
+     */
+    label: string;
+  }
+  interface UiLink {
+    /**
+     * class
+     */
+    class: string;
+    /**
+     * color
+     */
+    color: string;
+    /**
+     * font-family
+     */
+    fontfamily: string;
+    /**
+     * font-size
+     */
+    fontsize: string;
+    /**
+     * font-weight
+     */
+    fontweight: string;
+    /**
+     * link
+     */
+    link: string;
+    /**
+     * text-decoration
+     */
+    textdecoration: string;
+  }
+  interface UiModal {
+    /**
+     * Button color
+     */
+    btncolor?: 'primary' | 'secondary' | 'clear' | 'light';
+    /**
+     * button-label
+     */
+    buttonlabel: string;
+    /**
+     * closeCallback works only in Stencil components
+     */
+    closeCallback?: Function;
+    /**
+     * height
+     */
+    height: string;
+    /**
+     * Id
+     */
+    modalId: string;
+    /**
+     * Heading
+     */
+    modaltitle?: string;
+    /**
+     * open
+     */
+    open: boolean;
+    /**
+     * Position of modal
+     */
+    position?: 'center' | 'left' | 'right' | 'top' | 'bottom';
+    /**
+     * Title color
+     */
+    titlecolor: string;
+    /**
+     * Title font-family
+     */
+    titlefontfamily: string;
+    /**
+     * Title font-size
+     */
+    titlefontsize: string;
+    /**
+     * Title font-weight
+     */
+    titlefontweight: string;
+    /**
+     * width
+     */
+    width: string;
+  }
+  interface UiProduct_card {
+    btndisable: boolean;
+    btnlabel: string;
+    cardbgcolor: string;
+    cardheight: string;
+    cardwidth: string;
+    heading: string;
+    /**
+     * The label
+     */
+    image: string;
+    imgalt: string;
+    imgheight: string;
+    imgwidth: string;
+    price: string;
+  }
+  interface UiTextbox {
+    disabled?: boolean;
+    placeholder?: string;
+    shape?: 'full' | 'round' | 'smooth';
+    usecase?: 'search' | 'loginform';
+    width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
+  }
 }
 declare global {
   interface HTMLAvonFooterElement extends Components.AvonFooter, HTMLStencilElement {}
@@ -48,6 +291,11 @@ declare global {
   var HTMLBottomNavigationElement: {
     prototype: HTMLBottomNavigationElement;
     new (): HTMLBottomNavigationElement;
+  };
+  interface HTMLCartSidebarElement extends Components.CartSidebar, HTMLStencilElement {}
+  var HTMLCartSidebarElement: {
+    prototype: HTMLCartSidebarElement;
+    new (): HTMLCartSidebarElement;
   };
   interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {}
   var HTMLCategoryNavElement: {
@@ -74,15 +322,76 @@ declare global {
     prototype: HTMLTopBarElement;
     new (): HTMLTopBarElement;
   };
+  interface HTMLUiBox_containerElement extends Components.UiBox_container, HTMLStencilElement {}
+  var HTMLUiBox_containerElement: {
+    prototype: HTMLUiBox_containerElement;
+    new (): HTMLUiBox_containerElement;
+  };
+  interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {}
+  var HTMLUiButtonElement: {
+    prototype: HTMLUiButtonElement;
+    new (): HTMLUiButtonElement;
+  };
+  interface HTMLUiCart_productElement extends Components.UiCart_product, HTMLStencilElement {}
+  var HTMLUiCart_productElement: {
+    prototype: HTMLUiCart_productElement;
+    new (): HTMLUiCart_productElement;
+  };
+  interface HTMLUiHeadingElement extends Components.UiHeading, HTMLStencilElement {}
+  var HTMLUiHeadingElement: {
+    prototype: HTMLUiHeadingElement;
+    new (): HTMLUiHeadingElement;
+  };
+  interface HTMLUiImgElement extends Components.UiImg, HTMLStencilElement {}
+  var HTMLUiImgElement: {
+    prototype: HTMLUiImgElement;
+    new (): HTMLUiImgElement;
+  };
+  interface HTMLUiLabelElement extends Components.UiLabel, HTMLStencilElement {}
+  var HTMLUiLabelElement: {
+    prototype: HTMLUiLabelElement;
+    new (): HTMLUiLabelElement;
+  };
+  interface HTMLUiLinkElement extends Components.UiLink, HTMLStencilElement {}
+  var HTMLUiLinkElement: {
+    prototype: HTMLUiLinkElement;
+    new (): HTMLUiLinkElement;
+  };
+  interface HTMLUiModalElement extends Components.UiModal, HTMLStencilElement {}
+  var HTMLUiModalElement: {
+    prototype: HTMLUiModalElement;
+    new (): HTMLUiModalElement;
+  };
+  interface HTMLUiProduct_cardElement extends Components.UiProduct_card, HTMLStencilElement {}
+  var HTMLUiProduct_cardElement: {
+    prototype: HTMLUiProduct_cardElement;
+    new (): HTMLUiProduct_cardElement;
+  };
+  interface HTMLUiTextboxElement extends Components.UiTextbox, HTMLStencilElement {}
+  var HTMLUiTextboxElement: {
+    prototype: HTMLUiTextboxElement;
+    new (): HTMLUiTextboxElement;
+  };
   interface HTMLElementTagNameMap {
     'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
     'bottom-navigation': HTMLBottomNavigationElement;
+    'cart-sidebar': HTMLCartSidebarElement;
     'category-nav': HTMLCategoryNavElement;
     'desktop-menu': HTMLDesktopMenuElement;
     'mobile-menu': HTMLMobileMenuElement;
     'search-bar': HTMLSearchBarElement;
     'top-bar': HTMLTopBarElement;
+    'ui-box_container': HTMLUiBox_containerElement;
+    'ui-button': HTMLUiButtonElement;
+    'ui-cart_product': HTMLUiCart_productElement;
+    'ui-heading': HTMLUiHeadingElement;
+    'ui-img': HTMLUiImgElement;
+    'ui-label': HTMLUiLabelElement;
+    'ui-link': HTMLUiLinkElement;
+    'ui-modal': HTMLUiModalElement;
+    'ui-product_card': HTMLUiProduct_cardElement;
+    'ui-textbox': HTMLUiTextboxElement;
   }
 }
 declare namespace LocalJSX {
@@ -94,12 +403,14 @@ declare namespace LocalJSX {
     content?: any;
   }
   interface BottomNavigation {}
+  interface CartSidebar {}
   interface CategoryNav {
     categories?: any[];
   }
   interface DesktopMenu {
     cartCount?: any;
     data?: any;
+    onShowCart?: (event: CustomEvent<void>) => void;
     settings?: any;
     wishlistCount?: any;
   }
@@ -112,15 +423,268 @@ declare namespace LocalJSX {
   interface TopBar {
     settings?: any;
   }
+  interface UiBox_container {
+    /**
+     * background-color
+     */
+    backgroundcolor?: string;
+    /**
+     * display
+     */
+    display?: string;
+    /**
+     * height
+     */
+    height?: string;
+    /**
+     * Width
+     */
+    width?: string;
+  }
+  interface UiButton {
+    color?: 'primary' | 'secondary' | 'clear' | 'light';
+    disabled?: boolean;
+    /**
+     * Button Label
+     */
+    label?: string;
+    shape?: 'full' | 'round' | 'smooth' | 'text';
+    size?: 'large' | 'medium' | 'small';
+    width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
+  }
+  interface UiCart_product {
+    /**
+     * box bgcolor
+     */
+    boxbgcolor?: string;
+    /**
+     * box height
+     */
+    boxheight?: string;
+    /**
+     * box width
+     */
+    boxwidth?: string;
+    /**
+     * Product Heading
+     */
+    heading?: string;
+    /**
+     * Image src
+     */
+    image?: string;
+    /**
+     * image alt
+     */
+    imgalt?: string;
+    /**
+     * image height
+     */
+    imgheight?: string;
+    /**
+     * image width
+     */
+    imgwidth?: string;
+    /**
+     * link
+     */
+    link?: string;
+    /**
+     * price
+     */
+    price?: string;
+    /**
+     * removeCallback works only in Stencil components
+     */
+    removeCallback?: Function;
+    /**
+     * titlecolor
+     */
+    titlecolor?: string;
+    /**
+     * title fontfamily
+     */
+    titlefontfamily?: string;
+    /**
+     * title fontsize
+     */
+    titlefontsize?: string;
+  }
+  interface UiHeading {
+    /**
+     * The label
+     */
+    label?: string;
+    level?: 'h1' | 'h2' | 'h3';
+  }
+  interface UiImg {
+    /**
+     * alt
+     */
+    alt?: string;
+    /**
+     * height
+     */
+    height?: string;
+    /**
+     * src
+     */
+    src?: string;
+    /**
+     * width
+     */
+    width?: string;
+  }
+  interface UiLabel {
+    /**
+     * color
+     */
+    color?: string;
+    /**
+     * font-family
+     */
+    fontfamily?: string;
+    /**
+     * font-size
+     */
+    fontsize?: string;
+    /**
+     * font-weight
+     */
+    fontweight?: string;
+    /**
+     * Label
+     */
+    label?: string;
+  }
+  interface UiLink {
+    /**
+     * class
+     */
+    class?: string;
+    /**
+     * color
+     */
+    color?: string;
+    /**
+     * font-family
+     */
+    fontfamily?: string;
+    /**
+     * font-size
+     */
+    fontsize?: string;
+    /**
+     * font-weight
+     */
+    fontweight?: string;
+    /**
+     * link
+     */
+    link?: string;
+    /**
+     * text-decoration
+     */
+    textdecoration?: string;
+  }
+  interface UiModal {
+    /**
+     * Button color
+     */
+    btncolor?: 'primary' | 'secondary' | 'clear' | 'light';
+    /**
+     * button-label
+     */
+    buttonlabel?: string;
+    /**
+     * closeCallback works only in Stencil components
+     */
+    closeCallback?: Function;
+    /**
+     * height
+     */
+    height?: string;
+    /**
+     * Id
+     */
+    modalId?: string;
+    /**
+     * Heading
+     */
+    modaltitle?: string;
+    onModal?: (event: CustomEvent<ModalEvent>) => void;
+    /**
+     * open
+     */
+    open?: boolean;
+    /**
+     * Position of modal
+     */
+    position?: 'center' | 'left' | 'right' | 'top' | 'bottom';
+    /**
+     * Title color
+     */
+    titlecolor?: string;
+    /**
+     * Title font-family
+     */
+    titlefontfamily?: string;
+    /**
+     * Title font-size
+     */
+    titlefontsize?: string;
+    /**
+     * Title font-weight
+     */
+    titlefontweight?: string;
+    /**
+     * width
+     */
+    width?: string;
+  }
+  interface UiProduct_card {
+    btndisable?: boolean;
+    btnlabel?: string;
+    cardbgcolor?: string;
+    cardheight?: string;
+    cardwidth?: string;
+    heading?: string;
+    /**
+     * The label
+     */
+    image?: string;
+    imgalt?: string;
+    imgheight?: string;
+    imgwidth?: string;
+    price?: string;
+  }
+  interface UiTextbox {
+    disabled?: boolean;
+    placeholder?: string;
+    shape?: 'full' | 'round' | 'smooth';
+    usecase?: 'search' | 'loginform';
+    width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
+  }
   interface IntrinsicElements {
     'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
     'bottom-navigation': BottomNavigation;
+    'cart-sidebar': CartSidebar;
     'category-nav': CategoryNav;
     'desktop-menu': DesktopMenu;
     'mobile-menu': MobileMenu;
     'search-bar': SearchBar;
     'top-bar': TopBar;
+    'ui-box_container': UiBox_container;
+    'ui-button': UiButton;
+    'ui-cart_product': UiCart_product;
+    'ui-heading': UiHeading;
+    'ui-img': UiImg;
+    'ui-label': UiLabel;
+    'ui-link': UiLink;
+    'ui-modal': UiModal;
+    'ui-product_card': UiProduct_card;
+    'ui-textbox': UiTextbox;
   }
 }
 export { LocalJSX as JSX };
@@ -130,11 +694,22 @@ declare module '@stencil/core' {
       'avon-footer': LocalJSX.AvonFooter & JSXBase.HTMLAttributes<HTMLAvonFooterElement>;
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
       'bottom-navigation': LocalJSX.BottomNavigation & JSXBase.HTMLAttributes<HTMLBottomNavigationElement>;
+      'cart-sidebar': LocalJSX.CartSidebar & JSXBase.HTMLAttributes<HTMLCartSidebarElement>;
       'category-nav': LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
       'desktop-menu': LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
       'mobile-menu': LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;
       'search-bar': LocalJSX.SearchBar & JSXBase.HTMLAttributes<HTMLSearchBarElement>;
       'top-bar': LocalJSX.TopBar & JSXBase.HTMLAttributes<HTMLTopBarElement>;
+      'ui-box_container': LocalJSX.UiBox_container & JSXBase.HTMLAttributes<HTMLUiBox_containerElement>;
+      'ui-button': LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+      'ui-cart_product': LocalJSX.UiCart_product & JSXBase.HTMLAttributes<HTMLUiCart_productElement>;
+      'ui-heading': LocalJSX.UiHeading & JSXBase.HTMLAttributes<HTMLUiHeadingElement>;
+      'ui-img': LocalJSX.UiImg & JSXBase.HTMLAttributes<HTMLUiImgElement>;
+      'ui-label': LocalJSX.UiLabel & JSXBase.HTMLAttributes<HTMLUiLabelElement>;
+      'ui-link': LocalJSX.UiLink & JSXBase.HTMLAttributes<HTMLUiLinkElement>;
+      'ui-modal': LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
+      'ui-product_card': LocalJSX.UiProduct_card & JSXBase.HTMLAttributes<HTMLUiProduct_cardElement>;
+      'ui-textbox': LocalJSX.UiTextbox & JSXBase.HTMLAttributes<HTMLUiTextboxElement>;
     }
   }
 }

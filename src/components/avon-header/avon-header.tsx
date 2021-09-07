@@ -1,6 +1,5 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Listen, Prop, State } from '@stencil/core';
 import state, { onChange } from '../../store';
-import 'design-web-components';
 import 'ui-icons';
 
 @Component({
@@ -14,6 +13,12 @@ export class AvonHeader {
   @State() settings;
   @State() cartCount = 0;
   @State() wishlistCount = 0;
+
+  @Listen('showCart')
+  showCartHandler() {
+    console.log('asdf');
+    state.cartShown = true;
+  }
 
   componentWillLoad() {
     let str;

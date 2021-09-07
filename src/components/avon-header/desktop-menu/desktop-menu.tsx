@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'desktop-menu',
@@ -10,6 +10,14 @@ export class DesktopMenu {
   @Prop() settings = null;
   @Prop() cartCount;
   @Prop() wishlistCount;
+
+  @Event({
+    eventName: 'showCart',
+    composed: true,
+    cancelable: true,
+    bubbles: true,
+  })
+  showCart: EventEmitter<void>;
 
   render() {
     return (
@@ -28,7 +36,7 @@ export class DesktopMenu {
                   <ui-icon icon="heart" size="12" color="#7f28c4" />({this.wishlistCount})Wishlist
                 </span>
               </ui-button>
-              <ui-button shape="text">
+              <ui-button shape="text" onClick={() => this.showCart.emit()}>
                 <div class="miniCart">
                   <ui-icon icon="bag" size="31" />
                   &nbsp;&nbsp;&nbsp;

@@ -1,5 +1,4 @@
 import { Component, Prop, h, State } from '@stencil/core';
-import 'design-web-components';
 
 @Component({
   tag: 'avon-footer',
@@ -27,9 +26,9 @@ export class AvonFooter {
           <div class="row">
             {['listItem1', 'listItem2', 'listItem3'].map(key => (
               <div class="col" key={key}>
-                <h4>{this.data[key].title}</h4>
+                <h4>{this.data[key]?.title}</h4>
                 <ul class="footer-links">
-                  {this.data[key].data.map(item => (
+                  {this.data[key]?.data.map(item => (
                     <li key={item['@name']}>
                       <ui-link link={item.listItemURL}>
                         <div class="imgWithText">

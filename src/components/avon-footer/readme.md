@@ -13,8 +13,8 @@
 
 ### Depends on
 
-- ui-link
-- ui-img
+- [ui-link](../ui-link)
+- [ui-img](../ui-img)
 
 ### Graph
 
