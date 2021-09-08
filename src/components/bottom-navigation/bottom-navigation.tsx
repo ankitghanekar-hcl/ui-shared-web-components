@@ -38,7 +38,7 @@ export class BottomNavigation {
         <div class="item">
           <ui-button shape="text">
             {this.wishlistCount && <span class="cart-count">{this.wishlistCount}</span>}
-            <ui-icon icon="heart" size="20" color="#7f28c4" />
+            <ui-icon icon={this.wishlistCount ? 'heartFilled' : 'heart'} size="20" />
             <div class="label">Wishlist</div>
           </ui-button>
         </div>
