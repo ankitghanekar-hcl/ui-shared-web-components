@@ -19,6 +19,7 @@
 
 - [bottom-navigation](../bottom-navigation)
 - [desktop-menu](../avon-header/desktop-menu)
+- [mobile-menu](../avon-header/mobile-menu)
 - [search-bar](../avon-header/search-bar)
 - [ui-cart_product](../ui-cart_product)
 - [ui-modal](../ui-modal)
@@ -30,6 +31,7 @@
 graph TD;
   bottom-navigation --> ui-button
   desktop-menu --> ui-button
+  mobile-menu --> ui-button
   search-bar --> ui-button
   ui-cart_product --> ui-button
   ui-modal --> ui-button

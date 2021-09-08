@@ -18,7 +18,7 @@
 | `titlefontfamily` | `titlefontfamily` | Title font-family                              | `string`                                             | `'Montserrat,Arial'`    |
 | `titlefontsize`   | `titlefontsize`   | Title font-size                                | `string`                                             | `'18.72px'`             |
 | `titlefontweight` | `titlefontweight` | Title font-weight                              | `string`                                             | `'100'`                 |
-| `width`           | `width`           | width                                          | `string`                                             | `'300px'`               |
+| `width`           | `width`           | width                                          | `string`                                             | `undefined`             |
 
 ## Events
 

@@ -11,6 +11,10 @@ export class BottomNavigation {
   @State() cartCount = 0;
   @State() wishlistCount = 0;
 
+  showCart() {
+    state.cartShown = true;
+  }
+
   componentWillLoad() {
     this.cartCount = state.cart?.lineItems.length;
     this.wishlistCount = state.wishlist?.lineItems.length;
@@ -45,7 +49,7 @@ export class BottomNavigation {
           </ui-button>
         </div>
         <div class="item">
-          <ui-button shape="text">
+          <ui-button shape="text" onClick={this.showCart}>
             {this.cartCount && <span class="cart-count">{this.cartCount}</span>}
             <ui-icon icon="bag" size="23" color="#7f28c4" />
             <div class="label">Basket</div>

@@ -16,7 +16,6 @@ export class AvonHeader {
 
   @Listen('showCart')
   showCartHandler() {
-    console.log('asdf');
     state.cartShown = true;
   }
 

@@ -2,7 +2,7 @@ import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'ui-link',
-  styleUrl: 'ui-link.css',
+  styleUrl: 'ui-link.scss',
   shadow: true,
 })
 export class UiLink {
@@ -14,27 +14,27 @@ export class UiLink {
   /**
    * color
    */
-  @Prop() color: string = '#7f28c4';
+  @Prop() color?: string;
 
   /**
    * text-decoration
    */
-  @Prop() textdecoration: string = 'none';
+  @Prop() textdecoration?: string;
 
   /**
    * font-size
    */
-  @Prop() fontsize: string = '12px';
+  @Prop() fontsize?: string;
 
   /**
    * font-family
    */
-  @Prop() fontfamily: string = 'Montserrat,Arial,serif';
+  @Prop() fontfamily?: string;
 
   /**
    * font-weight
    */
-  @Prop() fontweight: string = '100';
+  @Prop() fontweight?: string;
 
   /**
    * class

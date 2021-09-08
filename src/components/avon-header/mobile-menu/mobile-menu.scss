@@ -57,8 +57,8 @@
           color: $c-primary;
         }
         .cart-bag {
+          --c-button-text: #{$c-primary};
           position: relative;
-          color: $c-primary;
           .cart-count {
             background: #000;
             color: $c-white;
@@ -125,6 +125,9 @@
       padding: 0;
       margin: 0;
       li {
+        --font-weight: 500;
+        --font-size: 18px;
+        --c-link: #{$c-text};
         cursor: pointer;
         font-size: 18px;
         font-weight: 500;
@@ -132,8 +135,6 @@
         padding: 12px 20px;
         text-transform: uppercase;
         border-bottom: solid;
-        border-bottom-width: 1px;
-        border-bottom-color: transparent;
         list-style: none;
         border-bottom: 1px solid #928f8f;
         line-height: 30px;
@@ -173,42 +174,6 @@
             margin-right: 10px;
           }
         }
-        li {
-          padding: 0;
-          a {
-            padding: 15px 20px;
-            font-family: $font-family;
-            text-transform: uppercase;
-            font-weight: 500;
-            width: 100%;
-            padding: 12px 40px;
-            display: block;
-          }
-        }
-      }
-    }
-  }
-  .top_navigation_desk {
-    display: flex;
-    flex-direction: column;
-    a {
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 500;
-      color: rgb(0, 0, 0);
-      padding: 12px 20px;
-      text-transform: uppercase;
-      border-bottom: solid;
-      border-bottom-width: 1px;
-      border-bottom-color: transparent;
-      list-style: none;
-      border-bottom: 1px solid #928f8f;
-      line-height: 30px;
-      font-family: $font-family;
-      & > .sf-icon {
-        display: inline-block;
-        position: absolute;
-        right: 20px;
       }
     }
   }

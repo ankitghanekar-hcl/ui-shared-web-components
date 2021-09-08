@@ -142,7 +142,7 @@
   &.text {
     font-weight: normal;
     background: transparent;
-    color: $c-text;
+    color: var(--c-button-text, $c-text);
     display: inline;
     padding: 0;
     border: none;

@@ -2,6 +2,12 @@
 
 <!-- Auto Generated Below -->
 
+## Events
+
+| Event             | Description | Type                                                                                                                                                  |
+| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cart:removeItem` |             | `CustomEvent<{ id: string; productId: string; name: string; price: { value: { centAmount: number; }; }; variant: { images: { url: string; }[]; }; }>` |
+
 ## Dependencies
 
 ### Depends on

@@ -1,4 +1,4 @@
-import { Component, h, State, Prop } from '@stencil/core';
+import { Component, h, State, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'mobile-menu',
@@ -10,8 +10,16 @@ export class MobileMenu {
   @Prop() settings = null;
   @Prop() cartCount;
   @State() menuOpen = false;
-  @State() subMenuToggle = false;
+  @State() subMenuToggled = false;
   @State() menuLeftPosition = '-1000px';
+
+  @Event({
+    eventName: 'showCart',
+    composed: true,
+    cancelable: true,
+    bubbles: true,
+  })
+  showCart: EventEmitter<void>;
 
   private toggleMenu() {
     this.menuLeftPosition = !this.menuOpen ? '0px' : '-1000px';
@@ -20,15 +28,14 @@ export class MobileMenu {
 
   toggleSubMenu(e) {
     let targetNode;
-    if (e.target.nodeName == 'svg') targetNode = e.target.parentElement.parentElement;
-    else targetNode = e.target;
-    let target = targetNode.childNodes[3];
+    targetNode = e.target;
+    let target = targetNode.childNodes[1];
     if (typeof target != 'undefined') {
-      target.style.right = this.subMenuToggle ? '1000px' : '0px';
-      this.subMenuToggle = !this.subMenuToggle;
+      target.style.right = this.subMenuToggled ? '1000px' : '0px';
+      this.subMenuToggled = !this.subMenuToggled;
     } else {
       targetNode.parentElement.style.right = '1000px';
-      this.subMenuToggle = false;
+      this.subMenuToggled = false;
     }
   }
 
@@ -48,48 +55,48 @@ export class MobileMenu {
                 <div class="top_navigation">
                   <ul class="mobNav" id="nav">
                     {this.categoryList.map(category => (
-                      <li class="mobNav__parent" key={category.id} onClick={e => this.toggleSubMenu(e)}>
+                      <li key={category.id} onClick={e => this.toggleSubMenu(e)}>
                         {category.name} &rarr;
                         <ul class="mobNav__child">
                           <div class="goBackMenu">&larr; {category.name}</div>
                           {category.slug && (
                             <li>
-                              <avon-link link={`/c/${category.slug}`}>All {category.name}</avon-link>
+                              <ui-link link={`/c/${category.slug}`}>All {category.name}</ui-link>
                             </li>
                           )}
                           {category.children.map(subCategory => (
                             <li key={subCategory.id}>
                               {category.slug ? (
-                                <avon-link link={`/c/${category.slug}/${subCategory.slug}`}>{subCategory.name}</avon-link>
+                                <ui-link link={`/c/${category.slug}/${subCategory.slug}`}>{subCategory.name}</ui-link>
                               ) : (
-                                <avon-link link={`/c/${subCategory.slug}`}>{subCategory.name}</avon-link>
+                                <ui-link link={`/c/${subCategory.slug}`}>{subCategory.name}</ui-link>
                               )}
                             </li>
                           ))}
                         </ul>
                       </li>
                     ))}
+                    {!this.subMenuToggled && (
+                      <div>
+                        <li>
+                          <ui-link link="/products">Products</ui-link>
+                        </li>
+                        <li>
+                          <ui-link link="#">Quick Shop</ui-link>
+                        </li>
+                        <li>
+                          <ui-link link="#">Offers</ui-link>
+                        </li>
+                        <li>
+                          <ui-link link="#">Avon Loves Blogs</ui-link>
+                        </li>
+                        <li>
+                          <ui-link link="#">REP HUB</ui-link>
+                        </li>
+                      </div>
+                    )}
                   </ul>
                 </div>
-                {!this.subMenuToggle && (
-                  <div class="top_navigation_desk">
-                    <div class="top-nav-link">
-                      <avon-link link="/products">Products</avon-link>
-                    </div>
-                    <div class="top-nav-link">
-                      <avon-link link="#">Quick Shop</avon-link>
-                    </div>
-                    <div class="top-nav-link">
-                      <avon-link link="#">Offers</avon-link>
-                    </div>
-                    <div class="top-nav-link">
-                      <avon-link link="#">Avon Loves Blogs</avon-link>
-                    </div>
-                    <div class="top-nav-link">
-                      <avon-link link="#">REP HUB</avon-link>
-                    </div>
-                  </div>
-                )}
               </aside>
             </div>
           </nav>
@@ -103,9 +110,9 @@ export class MobileMenu {
               <ui-icon icon="avatarUser" size="31" />
             </div>
             <div class="cart-bag">
-              <ui-link link="/cart">
+              <ui-button shape="text" onClick={() => this.showCart.emit()}>
                 <ui-icon icon="bag" size="31" />
-              </ui-link>
+              </ui-button>
               {this.cartCount && <span class="cart-count">{this.cartCount}</span>}
             </div>
           </div>

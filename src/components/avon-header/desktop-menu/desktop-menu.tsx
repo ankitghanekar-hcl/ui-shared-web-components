@@ -8,8 +8,8 @@ import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 export class DesktopMenu {
   @Prop() data = null;
   @Prop() settings = null;
-  @Prop() cartCount;
-  @Prop() wishlistCount;
+  @Prop() cartCount = 0;
+  @Prop() wishlistCount = 0;
 
   @Event({
     eventName: 'showCart',
@@ -33,7 +33,7 @@ export class DesktopMenu {
             <div class="header-icons">
               <ui-button class="wishlistHeader" shape="text">
                 <span>
-                  <ui-icon icon="heart" size="12" color="#7f28c4" />({this.wishlistCount})Wishlist
+                  <ui-icon icon={this.wishlistCount ? 'heartFilled' : 'heart'} size="12" />({this.wishlistCount})Wishlist
                 </span>
               </ui-button>
               <ui-button shape="text" onClick={() => this.showCart.emit()}>

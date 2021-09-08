@@ -10,6 +10,12 @@
 | `categoryList` | --           |             | `any[]` | `[]`        |
 | `settings`     | `settings`   |             | `any`   | `null`      |
 
+## Events
+
+| Event      | Description | Type                |
+| ---------- | ----------- | ------------------- |
+| `showCart` |             | `CustomEvent<void>` |
+
 ## Dependencies
 
 ### Used by
@@ -18,16 +24,18 @@
 
 ### Depends on
 
-- ui-icon
 - [ui-link](../../ui-link)
+- ui-icon
+- [ui-button](../../ui-button)
 - [search-bar](../search-bar)
 
 ### Graph
 
 ```mermaid
 graph TD;
-  mobile-menu --> ui-icon
   mobile-menu --> ui-link
+  mobile-menu --> ui-icon
+  mobile-menu --> ui-button
   mobile-menu --> search-bar
   search-bar --> ui-textbox
   search-bar --> ui-button

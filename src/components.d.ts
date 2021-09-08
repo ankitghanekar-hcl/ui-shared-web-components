@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import { LineItem } from './components/cart-sidebar/cart-sidebar';
 import { ModalEvent } from './components/ui-modal/ui-modal';
 export namespace Components {
   interface AvonFooter {
@@ -20,10 +21,10 @@ export namespace Components {
     categories: any[];
   }
   interface DesktopMenu {
-    cartCount: any;
+    cartCount: number;
     data: any;
     settings: any;
-    wishlistCount: any;
+    wishlistCount: number;
   }
   interface MobileMenu {
     cartCount: any;
@@ -176,19 +177,19 @@ export namespace Components {
     /**
      * color
      */
-    color: string;
+    color?: string;
     /**
      * font-family
      */
-    fontfamily: string;
+    fontfamily?: string;
     /**
      * font-size
      */
-    fontsize: string;
+    fontsize?: string;
     /**
      * font-weight
      */
-    fontweight: string;
+    fontweight?: string;
     /**
      * link
      */
@@ -196,7 +197,7 @@ export namespace Components {
     /**
      * text-decoration
      */
-    textdecoration: string;
+    textdecoration?: string;
   }
   interface UiModal {
     /**
@@ -250,7 +251,7 @@ export namespace Components {
     /**
      * width
      */
-    width: string;
+    width?: string;
   }
   interface UiProduct_card {
     btndisable: boolean;
@@ -403,20 +404,23 @@ declare namespace LocalJSX {
     content?: any;
   }
   interface BottomNavigation {}
-  interface CartSidebar {}
+  interface CartSidebar {
+    'onCart:removeItem'?: (event: CustomEvent<LineItem>) => void;
+  }
   interface CategoryNav {
     categories?: any[];
   }
   interface DesktopMenu {
-    cartCount?: any;
+    cartCount?: number;
     data?: any;
     onShowCart?: (event: CustomEvent<void>) => void;
     settings?: any;
-    wishlistCount?: any;
+    wishlistCount?: number;
   }
   interface MobileMenu {
     cartCount?: any;
     categoryList?: any[];
+    onShowCart?: (event: CustomEvent<void>) => void;
     settings?: any;
   }
   interface SearchBar {}

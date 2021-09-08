@@ -4,15 +4,15 @@
 
 ## Properties
 
-| Property         | Attribute        | Description     | Type     | Default                    |
-| ---------------- | ---------------- | --------------- | -------- | -------------------------- |
-| `class`          | `class`          | class           | `string` | `undefined`                |
-| `color`          | `color`          | color           | `string` | `'#7f28c4'`                |
-| `fontfamily`     | `fontfamily`     | font-family     | `string` | `'Montserrat,Arial,serif'` |
-| `fontsize`       | `fontsize`       | font-size       | `string` | `'12px'`                   |
-| `fontweight`     | `fontweight`     | font-weight     | `string` | `'100'`                    |
-| `link`           | `link`           | link            | `string` | `undefined`                |
-| `textdecoration` | `textdecoration` | text-decoration | `string` | `'none'`                   |
+| Property         | Attribute        | Description     | Type     | Default     |
+| ---------------- | ---------------- | --------------- | -------- | ----------- |
+| `class`          | `class`          | class           | `string` | `undefined` |
+| `color`          | `color`          | color           | `string` | `undefined` |
+| `fontfamily`     | `fontfamily`     | font-family     | `string` | `undefined` |
+| `fontsize`       | `fontsize`       | font-size       | `string` | `undefined` |
+| `fontweight`     | `fontweight`     | font-weight     | `string` | `undefined` |
+| `link`           | `link`           | link            | `string` | `undefined` |
+| `textdecoration` | `textdecoration` | text-decoration | `string` | `undefined` |
 
 ## Dependencies
 

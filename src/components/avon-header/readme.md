@@ -26,8 +26,9 @@ graph TD;
   avon-header --> mobile-menu
   avon-header --> desktop-menu
   top-bar --> ui-link
-  mobile-menu --> ui-icon
   mobile-menu --> ui-link
+  mobile-menu --> ui-icon
+  mobile-menu --> ui-button
   mobile-menu --> search-bar
   search-bar --> ui-textbox
   search-bar --> ui-button

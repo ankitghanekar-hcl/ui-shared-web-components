@@ -4,12 +4,12 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type  | Default     |
-| --------------- | ---------------- | ----------- | ----- | ----------- |
-| `cartCount`     | `cart-count`     |             | `any` | `undefined` |
-| `data`          | `data`           |             | `any` | `null`      |
-| `settings`      | `settings`       |             | `any` | `null`      |
-| `wishlistCount` | `wishlist-count` |             | `any` | `undefined` |
+| Property        | Attribute        | Description | Type     | Default |
+| --------------- | ---------------- | ----------- | -------- | ------- |
+| `cartCount`     | `cart-count`     |             | `number` | `0`     |
+| `data`          | `data`           |             | `any`    | `null`  |
+| `settings`      | `settings`       |             | `any`    | `null`  |
+| `wishlistCount` | `wishlist-count` |             | `number` | `0`     |
 
 ## Events
 

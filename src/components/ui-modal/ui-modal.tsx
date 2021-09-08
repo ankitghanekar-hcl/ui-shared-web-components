@@ -42,7 +42,7 @@ export class UiModal {
   /**
    * width
    */
-  @Prop() width: string = '300px';
+  @Prop() width?: string;
   /**
    * height
    */
