@@ -25,6 +25,7 @@
 ### Depends on
 
 - [ui-link](../../ui-link)
+- [ui-img](../../ui-img)
 - ui-icon
 - [ui-button](../../ui-button)
 - [search-bar](../search-bar)
@@ -34,6 +35,7 @@
 ```mermaid
 graph TD;
   mobile-menu --> ui-link
+  mobile-menu --> ui-img
   mobile-menu --> ui-icon
   mobile-menu --> ui-button
   mobile-menu --> search-bar

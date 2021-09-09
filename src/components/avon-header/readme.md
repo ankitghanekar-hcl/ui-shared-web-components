@@ -12,7 +12,6 @@
 
 ### Depends on
 
-- [ui-box_container](../ui-box_container)
 - [top-bar](top-bar)
 - [mobile-menu](mobile-menu)
 - [desktop-menu](desktop-menu)
@@ -21,12 +20,12 @@
 
 ```mermaid
 graph TD;
-  avon-header --> ui-box_container
   avon-header --> top-bar
   avon-header --> mobile-menu
   avon-header --> desktop-menu
   top-bar --> ui-link
   mobile-menu --> ui-link
+  mobile-menu --> ui-img
   mobile-menu --> ui-icon
   mobile-menu --> ui-button
   mobile-menu --> search-bar

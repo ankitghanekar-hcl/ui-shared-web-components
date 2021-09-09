@@ -1,4 +1,4 @@
-import { Component, h, Listen, Prop, State } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
 import state, { onChange } from '../../store';
 import 'ui-icons';
 
@@ -41,9 +41,14 @@ export class AvonHeader {
       this.wishlistCount = value?.lineItems.length;
     });
   }
+  @Watch('content')
+  change(val: any) {
+    const { cart } = val;
+    state.cart = cart;
+  }
   render() {
     return (
-      <ui-box_container>
+      <div>
         <div class="container desktop-only">
           <top-bar settings={this.settings} />
         </div>
@@ -55,7 +60,7 @@ export class AvonHeader {
             <desktop-menu data={this.categories} settings={this.settings} cartCount={this.cartCount} wishlistCount={this.wishlistCount} />
           </div>
         </div>
-      </ui-box_container>
+      </div>
     );
   }
 }

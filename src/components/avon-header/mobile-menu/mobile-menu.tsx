@@ -101,9 +101,9 @@ export class MobileMenu {
             </div>
           </nav>
           <div class="logo">
-            <a href="/">
-              <img src={this.settings?.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} class="header__logoImage" />
-            </a>
+            <ui-link link="/">
+              <ui-img width="100" src={this.settings?.logo || 'https://avon.europe-west1.gcp.storefrontcloud.io/homepage/logo.png'} />
+            </ui-link>
           </div>
           <div class="account-block">
             <div class="account">
@@ -113,7 +113,7 @@ export class MobileMenu {
               <ui-button shape="text" onClick={() => this.showCart.emit()}>
                 <ui-icon icon="bag" size="31" />
               </ui-button>
-              {this.cartCount && <span class="cart-count">{this.cartCount}</span>}
+              {this.cartCount > 0 && <span class="cart-count">{this.cartCount}</span>}
             </div>
           </div>
         </div>

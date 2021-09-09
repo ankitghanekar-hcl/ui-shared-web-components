@@ -37,7 +37,7 @@ export class BottomNavigation {
         </div>
         <div class="item">
           <ui-button shape="text">
-            {this.wishlistCount && <span class="cart-count">{this.wishlistCount}</span>}
+            {this.wishlistCount > 0 && <span class="cart-count">{this.wishlistCount}</span>}
             <ui-icon icon={this.wishlistCount ? 'heartFilled' : 'heart'} size="20" />
             <div class="label">Wishlist</div>
           </ui-button>
@@ -50,7 +50,7 @@ export class BottomNavigation {
         </div>
         <div class="item">
           <ui-button shape="text" onClick={this.showCart}>
-            {this.cartCount && <span class="cart-count">{this.cartCount}</span>}
+            {this.cartCount > 0 && <span class="cart-count">{this.cartCount}</span>}
             <ui-icon icon="bag" size="23" color="#7f28c4" />
             <div class="label">Basket</div>
           </ui-button>
