@@ -9,6 +9,7 @@ import 'ui-icons';
 })
 export class AvonHeader {
   @Prop() content;
+  @Prop() data;
   @State() categories;
   @State() settings;
   @State() cartCount = 0;
@@ -41,10 +42,11 @@ export class AvonHeader {
       this.wishlistCount = value?.lineItems.length;
     });
   }
-  @Watch('content')
+  @Watch('data')
   change(val: any) {
-    const { cart } = val;
-    state.cart = cart;
+    const { cart, wishlist } = val;
+    if (cart) state.cart = cart;
+    if (wishlist) state.wishlist = wishlist;
   }
   render() {
     return (

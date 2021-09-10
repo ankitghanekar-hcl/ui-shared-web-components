@@ -7,6 +7,7 @@
 | Property  | Attribute | Description | Type  | Default     |
 | --------- | --------- | ----------- | ----- | ----------- |
 | `content` | `content` |             | `any` | `undefined` |
+| `data`    | `data`    |             | `any` | `undefined` |
 
 ## Dependencies
 

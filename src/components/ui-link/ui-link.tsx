@@ -39,7 +39,7 @@ export class UiLink {
   /**
    * class
    */
-  @Prop() class: string;
+  @Prop() class?: string;
 
   render() {
     return (

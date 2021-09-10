@@ -14,6 +14,7 @@ export namespace Components {
   }
   interface AvonHeader {
     content: any;
+    data: any;
   }
   interface BottomNavigation {}
   interface CartSidebar {}
@@ -173,7 +174,7 @@ export namespace Components {
     /**
      * class
      */
-    class: string;
+    class?: string;
     /**
      * color
      */
@@ -402,6 +403,7 @@ declare namespace LocalJSX {
   }
   interface AvonHeader {
     content?: any;
+    data?: any;
   }
   interface BottomNavigation {}
   interface CartSidebar {
