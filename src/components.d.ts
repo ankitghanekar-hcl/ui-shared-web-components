@@ -42,6 +42,10 @@ export namespace Components {
      */
     backgroundcolor: string;
     /**
+     * background-color
+     */
+    backgroundimage: string;
+    /**
      * display
      */
     display: string;
@@ -277,6 +281,17 @@ export namespace Components {
     usecase?: 'search' | 'loginform';
     width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
   }
+  interface UiTrendingBlock {
+    /**
+     * The label
+     */
+    cardbgimage: string;
+    cardheight: string;
+    cardwidth: string;
+    description: string;
+    heading: string;
+    headingptop: string;
+  }
 }
 declare global {
   interface HTMLAvonFooterElement extends Components.AvonFooter, HTMLStencilElement {}
@@ -374,6 +389,11 @@ declare global {
     prototype: HTMLUiTextboxElement;
     new (): HTMLUiTextboxElement;
   };
+  interface HTMLUiTrendingBlockElement extends Components.UiTrendingBlock, HTMLStencilElement {}
+  var HTMLUiTrendingBlockElement: {
+    prototype: HTMLUiTrendingBlockElement;
+    new (): HTMLUiTrendingBlockElement;
+  };
   interface HTMLElementTagNameMap {
     'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
@@ -394,6 +414,7 @@ declare global {
     'ui-modal': HTMLUiModalElement;
     'ui-product_card': HTMLUiProduct_cardElement;
     'ui-textbox': HTMLUiTextboxElement;
+    'ui-trending-block': HTMLUiTrendingBlockElement;
   }
 }
 declare namespace LocalJSX {
@@ -434,6 +455,10 @@ declare namespace LocalJSX {
      * background-color
      */
     backgroundcolor?: string;
+    /**
+     * background-color
+     */
+    backgroundimage?: string;
     /**
      * display
      */
@@ -671,6 +696,17 @@ declare namespace LocalJSX {
     usecase?: 'search' | 'loginform';
     width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
   }
+  interface UiTrendingBlock {
+    /**
+     * The label
+     */
+    cardbgimage?: string;
+    cardheight?: string;
+    cardwidth?: string;
+    description?: string;
+    heading?: string;
+    headingptop?: string;
+  }
   interface IntrinsicElements {
     'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
@@ -691,6 +727,7 @@ declare namespace LocalJSX {
     'ui-modal': UiModal;
     'ui-product_card': UiProduct_card;
     'ui-textbox': UiTextbox;
+    'ui-trending-block': UiTrendingBlock;
   }
 }
 export { LocalJSX as JSX };
@@ -716,6 +753,7 @@ declare module '@stencil/core' {
       'ui-modal': LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
       'ui-product_card': LocalJSX.UiProduct_card & JSXBase.HTMLAttributes<HTMLUiProduct_cardElement>;
       'ui-textbox': LocalJSX.UiTextbox & JSXBase.HTMLAttributes<HTMLUiTextboxElement>;
+      'ui-trending-block': LocalJSX.UiTrendingBlock & JSXBase.HTMLAttributes<HTMLUiTrendingBlockElement>;
     }
   }
 }

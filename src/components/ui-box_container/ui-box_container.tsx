@@ -17,6 +17,11 @@ export class UiBox_Container {
   @Prop() backgroundcolor: string = 'white';
 
   /**
+   * background-color
+   */
+  @Prop() backgroundimage: string = '';
+
+  /**
    * height
    */
   @Prop() height: string = '300px';
@@ -28,7 +33,15 @@ export class UiBox_Container {
 
   render() {
     return (
-      <div style={{ 'background-color': this.backgroundcolor, 'width': this.width, 'height': this.height, 'display': this.display }}>
+      <div
+        style={{
+          'backgroundcolor': this.backgroundcolor,
+          'background-image': `url(${this.backgroundimage})`,
+          'width': this.width,
+          'height': this.height,
+          'display': this.display,
+        }}
+      >
         <slot />
       </div>
     );

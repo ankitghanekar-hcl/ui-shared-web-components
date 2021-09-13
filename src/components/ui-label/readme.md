@@ -17,12 +17,14 @@
 ### Used by
 
 - [ui-product_card](../ui-product_card)
+- [ui-trending-block](../ui-trending-block)
 
 ### Graph
 
 ```mermaid
 graph TD;
   ui-product_card --> ui-label
+  ui-trending-block --> ui-label
   style ui-label fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
