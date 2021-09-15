@@ -75,13 +75,13 @@ export class CartSidebar {
                   removeCallback={() => this.removeCallback(item)}
                 ></ui-cart_product>
               ))}
-            <h3 class="bottom">Total price: {this.getTotalPrice()}</h3>
           </div>
         ) : (
           <div class="content center">
             <h2>Your cart is empty</h2>
           </div>
         )}
+        {this.cart?.lineItems.length && <h3 slot="bottom">Total price: {this.getTotalPrice()}</h3>}
       </ui-modal>
     );
   }

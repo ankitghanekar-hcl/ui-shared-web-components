@@ -112,6 +112,7 @@ export class UiModal {
             <slot />
           </div>
           <div class="button-container">
+            <slot name="bottom" />
             <ui-button class="button" color={this.btncolor} width="fullwidth" onClick={this.handleBtnClick}>
               <h3>{this.buttonlabel}</h3>
             </ui-button>
