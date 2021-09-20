@@ -1,6 +1,5 @@
 import { Component, Event, EventEmitter, h, State } from '@stencil/core';
 import 'design-web-components';
-import { displayPrice } from 'ui-utils'
 import state, { onChange } from '../../store';
 
 export type LineItem = {
@@ -15,6 +14,15 @@ export type LineItem = {
   variant: {
     images: { url: string }[];
   };
+};
+
+const priceFormatter = n => {
+  const format = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
+  return format.format(n);
 };
 
 @Component({
@@ -39,11 +47,11 @@ export class CartSidebar {
       this.cart = value;
     });
   }
-  getTotalPrice() {
-    return displayPrice(this.cart.lineItems.reduce((price, item) => price + item.price?.value.centAmount, 0) / 100);
+  private getTotalPrice() {
+    return priceFormatter(this.cart.lineItems.reduce((price, item) => price + item.price?.value.centAmount, 0) / 100);
   }
 
-  removeCallback(item: LineItem) {
+  private removeCallback(item: LineItem) {
     this.removeItem.emit(item);
   }
 
@@ -64,9 +72,9 @@ export class CartSidebar {
                 <ui-cart_product
                   image={item.variant.images[0].url}
                   heading={item.name}
-                  price={displayPrice(item.price?.value.centAmount / 100)}
+                  price={priceFormatter(item.price?.value.centAmount / 100)}
                   removeCallback={() => this.removeCallback(item)}
-                ></ui-cart_product>
+                />
               ))}
           </div>
         ) : (

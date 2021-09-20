@@ -30,9 +30,9 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@stencil/core": "^2.7.0",
-    "nextjs-magnolia-connector": "./nextjs-magnolia-connector-v0.1.1.tgz",
+    "@stencil/core": "2.7.0",
     "design-web-components": "file:design-web-components-v0.0.3.tgz",
+    "nextjs-magnolia-connector": "./nextjs-magnolia-connector-v0.1.1.tgz",
     "ui-icons": "file:ui-icons-v0.0.1.tgz"
   },
   "devDependencies": {
