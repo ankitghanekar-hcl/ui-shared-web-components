@@ -1,4 +1,5 @@
 import { Component, h, State, Prop, Event, EventEmitter } from '@stencil/core';
+import 'design-web-components';
 
 @Component({
   tag: 'mobile-menu',

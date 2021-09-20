@@ -1,4 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
+import 'design-web-components';
 
 @Component({
   tag: 'category-nav',

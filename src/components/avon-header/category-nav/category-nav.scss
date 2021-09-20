@@ -1,9 +1,11 @@
-@import 'scss/variables';
+@import '~design-web-components/scss/variables';
 
 :host {
   display: block;
 
   .category_navigation {
+    --c-link: #{$c-text};
+    --font-size: 1rem;
     display: flex;
     align-items: center;
     width: 100%;
@@ -47,6 +49,7 @@
   }
 
   .mega-menu {
+    --font-size: 13px;
     display: none;
     position: absolute;
     background: #fff;

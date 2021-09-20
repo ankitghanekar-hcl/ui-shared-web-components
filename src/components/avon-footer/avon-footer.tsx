@@ -1,4 +1,6 @@
 import { Component, Prop, h, State } from '@stencil/core';
+import { getMgnlApp } from 'nextjs-magnolia-connector';
+import 'design-web-components';
 
 @Component({
   tag: 'avon-footer',
@@ -7,17 +9,21 @@ import { Component, Prop, h, State } from '@stencil/core';
 })
 export class AvonFooter {
   @Prop() isDark = false;
-  @Prop() content;
+  @Prop({ mutable: true, reflect: true }) content;
   @State() data;
 
-  componentWillLoad() {
-    let str;
-    if (typeof Buffer !== 'undefined') {
-      const b = new Buffer(this.content, 'base64');
-      str = b.toString('utf8');
-    } else str = atob(this.content);
-
-    this.data = JSON.parse(str);
+  async componentWillLoad() {
+    if (this.content) this.data = JSON.parse(decodeURIComponent(this.content));
+    else {
+      this.data = await getMgnlApp({
+        lang: 'en',
+        country: 'GB',
+        endpoint: 'footer',
+        site: 'avon',
+        resType: 'JCR',
+      });
+      this.content = encodeURIComponent(JSON.stringify(this.data));
+    }
   }
   render() {
     return (

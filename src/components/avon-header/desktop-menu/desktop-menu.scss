@@ -1,4 +1,4 @@
-@import 'scss/variables';
+@import '~design-web-components/scss/variables';
 
 :host {
   display: flex;
@@ -55,6 +55,8 @@
   }
 
   .top_navigation_desk {
+    --c-link: #{$text-secondary};
+    --font-size: 12px;
     font-family: $font-family;
     display: flex;
     align-items: center;
@@ -66,7 +68,6 @@
       padding: 10px 20px;
       font-size: 12px;
       text-transform: uppercase;
-      color: $text-secondary;
       font-weight: 100;
       border-bottom: 1px solid $c-white;
 

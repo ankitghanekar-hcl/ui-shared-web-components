@@ -2,21 +2,22 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Events
 
 | Event             | Description | Type                                                                                                                                                  |
 | ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `cart:removeItem` |             | `CustomEvent<{ id: string; productId: string; name: string; price: { value: { centAmount: number; }; }; variant: { images: { url: string; }[]; }; }>` |
 
+
 ## Dependencies
 
 ### Depends on
 
-- [ui-modal](../ui-modal)
-- [ui-cart_product](../ui-cart_product)
+- ui-modal
+- ui-cart_product
 
 ### Graph
-
 ```mermaid
 graph TD;
   cart-sidebar --> ui-modal
@@ -28,6 +29,6 @@ graph TD;
   style cart-sidebar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

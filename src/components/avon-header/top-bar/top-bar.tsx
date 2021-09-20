@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import 'design-web-components';
 
 @Component({
   tag: 'top-bar',
@@ -12,18 +13,12 @@ export class TopBar {
     return (
       <div class="topbar">
         <div class="rep">
-          <ui-link link="/rep">
-            <span class="topbar-link">{this.settings?.findRep}</span>
-          </ui-link>
+          <ui-link link="/rep">{this.settings?.findRep}</ui-link>
           <span>&nbsp;|&nbsp;</span>
-          <ui-link link="#">
-            <span class="topbar-link">{this.settings?.becomeRep}</span>
-          </ui-link>
+          <ui-link link="#">{this.settings?.becomeRep}</ui-link>
         </div>
         <div>
-          <ui-link link="#">
-            <span class="topbar-link">{this.settings?.loginText}</span>
-          </ui-link>
+          <ui-link link="#">{this.settings?.loginText}</ui-link>
         </div>
       </div>
     );

@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute        | Description | Type     | Default |
@@ -11,28 +12,29 @@
 | `settings`      | `settings`       |             | `any`    | `null`  |
 | `wishlistCount` | `wishlist-count` |             | `number` | `0`     |
 
+
 ## Events
 
 | Event      | Description | Type                |
 | ---------- | ----------- | ------------------- |
 | `showCart` |             | `CustomEvent<void>` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [avon-header](..)
+ - [avon-header](..)
 
 ### Depends on
 
 - [search-bar](../search-bar)
-- [ui-button](../../ui-button)
+- ui-button
 - ui-icon
-- [ui-link](../../ui-link)
+- ui-link
 - [category-nav](../category-nav)
 
 ### Graph
-
 ```mermaid
 graph TD;
   desktop-menu --> search-bar
@@ -48,6 +50,6 @@ graph TD;
   style desktop-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

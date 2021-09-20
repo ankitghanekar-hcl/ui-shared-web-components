@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import 'design-web-components';
 
 @Component({
   tag: 'desktop-menu',
@@ -48,27 +49,27 @@ export class DesktopMenu {
         </div>
         <div class="top_navigation_desk">
           <div class="top-nav-link">
-            <ui-link link="/products" color="rgb(29, 31, 34)">
+            <ui-link link="/products">
               <span>Products</span>
             </ui-link>
           </div>
           <div class="top-nav-link">
-            <ui-link link="#" color="rgb(29, 31, 34)">
+            <ui-link link="#">
               <span>Quick Shop</span>
             </ui-link>
           </div>
           <div class="top-nav-link">
-            <ui-link link="#" color="rgb(29, 31, 34)">
+            <ui-link link="#">
               <span>Offers</span>
             </ui-link>
           </div>
           <div class="top-nav-link">
-            <ui-link link="#" color="rgb(29, 31, 34)">
+            <ui-link link="#">
               <span>Avon Loves Blogs</span>
             </ui-link>
           </div>
           <div class="top-nav-link">
-            <ui-link link="#" color="rgb(29, 31, 34)">
+            <ui-link link="#">
               <span>REP HUB</span>
             </ui-link>
           </div>

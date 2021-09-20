@@ -1,4 +1,6 @@
 import { Component, Event, EventEmitter, h, State } from '@stencil/core';
+import 'design-web-components';
+import { displayPrice } from 'ui-utils'
 import state, { onChange } from '../../store';
 
 export type LineItem = {
@@ -13,15 +15,6 @@ export type LineItem = {
   variant: {
     images: { url: string }[];
   };
-};
-
-const displayPrice = n => {
-  const format = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
-  return format.format(n);
 };
 
 @Component({

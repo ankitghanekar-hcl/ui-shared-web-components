@@ -2,12 +2,14 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property  | Attribute | Description | Type  | Default     |
 | --------- | --------- | ----------- | ----- | ----------- |
 | `content` | `content` |             | `any` | `undefined` |
 | `data`    | `data`    |             | `any` | `undefined` |
+
 
 ## Dependencies
 
@@ -18,7 +20,6 @@
 - [desktop-menu](desktop-menu)
 
 ### Graph
-
 ```mermaid
 graph TD;
   avon-header --> top-bar
@@ -42,6 +43,6 @@ graph TD;
   style avon-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

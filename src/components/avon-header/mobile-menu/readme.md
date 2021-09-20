@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property       | Attribute    | Description | Type    | Default     |
@@ -10,28 +11,29 @@
 | `categoryList` | --           |             | `any[]` | `[]`        |
 | `settings`     | `settings`   |             | `any`   | `null`      |
 
+
 ## Events
 
 | Event      | Description | Type                |
 | ---------- | ----------- | ------------------- |
 | `showCart` |             | `CustomEvent<void>` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [avon-header](..)
+ - [avon-header](..)
 
 ### Depends on
 
-- [ui-link](../../ui-link)
-- [ui-img](../../ui-img)
+- ui-link
+- ui-img
 - ui-icon
-- [ui-button](../../ui-button)
+- ui-button
 - [search-bar](../search-bar)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mobile-menu --> ui-link
@@ -46,6 +48,6 @@ graph TD;
   style mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

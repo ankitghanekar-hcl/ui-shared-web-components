@@ -2,24 +2,25 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description | Type  | Default |
 | ---------- | ---------- | ----------- | ----- | ------- |
 | `settings` | `settings` |             | `any` | `null`  |
 
+
 ## Dependencies
 
 ### Used by
 
-- [avon-header](..)
+ - [avon-header](..)
 
 ### Depends on
 
-- [ui-link](../../ui-link)
+- ui-link
 
 ### Graph
-
 ```mermaid
 graph TD;
   top-bar --> ui-link
@@ -27,6 +28,6 @@ graph TD;
   style top-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

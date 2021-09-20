@@ -1,5 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 import 'ui-icons';
+import 'design-web-components';
 import state, { onChange } from '../../store';
 
 @Component({

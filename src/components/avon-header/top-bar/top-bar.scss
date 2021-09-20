@@ -1,4 +1,4 @@
-@import 'scss/variables';
+@import '~design-web-components/scss/variables';
 
 :host {
   display: block;
@@ -6,17 +6,14 @@
   max-width: 77.5rem;
 
   .topbar {
+    --font-size: 10px;
+    --c-link: #{$c-text};
     position: relative;
     z-index: 1;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-
-    &-link {
-      font-size: 10px;
-      color: $c-text;
-    }
 
     .rep {
       display: flex;
