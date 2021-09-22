@@ -1,11 +1,9 @@
-/* @import 'scss/variables'; */
-
 :host {
   display: block;
 }
 /* h3{
-  color:#999;
-} */
+    color:#999;
+  } */
 
 .content {
   height: 80%;
@@ -22,19 +20,14 @@
   display: flex;
   justify-content: center;
   /* height: 100px;
-  overflow:auto; */
+    overflow:auto; */
 }
 .bottom-price {
   display: flex;
   justify-content: space-between;
 }
-/* .displaytotal{
-  --c-color: #{$c-primary};
-} */
 .bottom-price .displaytotal {
   color: #7f28c4;
-  /* --c-color: #{$c-primary};
-  color: var(--c-color); */
 }
 .bottom {
   margin-top: auto;

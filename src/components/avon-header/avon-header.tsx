@@ -21,6 +21,12 @@ export class AvonHeader {
     state.cartShown = true;
   }
 
+  @Listen('showWishlist')
+  showWishlistHandler() {
+    console.log('asdf');
+    state.wishlistShown = true;
+  }
+
   componentWillLoad() {
     let str;
     if (typeof Buffer !== 'undefined') {

@@ -19,6 +19,13 @@ export class DesktopMenu {
     bubbles: true,
   })
   showCart: EventEmitter<void>;
+  @Event({
+    eventName: 'showWishlist',
+    composed: true,
+    cancelable: true,
+    bubbles: true,
+  })
+  showWishlist: EventEmitter<void>;
 
   render() {
     return (
@@ -32,10 +39,16 @@ export class DesktopMenu {
           <div class="header-actions">
             <search-bar></search-bar>
             <div class="header-icons">
-              <ui-button class="wishlistHeader" shape="text">
+              {/* <ui-button class="wishlistHeader" shape="text">
                 <span>
                   <ui-icon icon={this.wishlistCount ? 'heartFilled' : 'heart'} size="12" />({this.wishlistCount})Wishlist
                 </span>
+              </ui-button> */}
+              <ui-button shape="text" onClick={() => this.showWishlist.emit()}>
+                <div class="wishlistHeader">
+                  <ui-icon icon="heart" size="12" color="#7f28c4" />
+                  <span>({this.wishlistCount})Wishlist</span>
+                </div>
               </ui-button>
               <ui-button shape="text" onClick={() => this.showCart.emit()}>
                 <div class="miniCart">

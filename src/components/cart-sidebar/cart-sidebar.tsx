@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, State, Prop } from '@stencil/core';
 import 'design-web-components';
 import state, { onChange } from '../../store';
 
@@ -31,6 +31,7 @@ const priceFormatter = n => {
   shadow: true,
 })
 export class CartSidebar {
+  @Prop() color: string = '#7f28c4';
   @State() cart;
 
   @Event({
@@ -61,12 +62,14 @@ export class CartSidebar {
         open={state.cartShown}
         closeCallback={() => (state.cartShown = false)}
         buttonlabel={this.cart?.lineItems.length ? 'View Bag' : 'Continue shopping'}
-        btncolor="primary"
+        btncolor="secondary"
       >
-        <h1 slot="title">Cart</h1>
+        <h1 slot="title">Mini Cart</h1>
+        <p slot="total">
+          Total items:<b>{this.cart?.lineItems.length}</b>
+        </p>
         {this.cart?.lineItems.length ? (
           <div class="content">
-            <h3>Total items: {this.cart?.lineItems.length}</h3>
             {this.cart?.lineItems &&
               this.cart?.lineItems.map(item => (
                 <ui-cart_product
@@ -82,7 +85,17 @@ export class CartSidebar {
             <h2>Your cart is empty</h2>
           </div>
         )}
-        {this.cart?.lineItems.length && <h3 slot="bottom">Total price: {this.getTotalPrice()}</h3>}
+
+        {this.cart?.lineItems.length && (
+          <p slot="bottom">
+            <div class="bottom-price">
+              Total price:
+              <span class="displaytotal">
+                <b>{this.getTotalPrice()}</b>
+              </span>
+            </div>
+          </p>
+        )}
       </ui-modal>
     );
   }
