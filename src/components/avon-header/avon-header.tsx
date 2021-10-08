@@ -1,5 +1,7 @@
 import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
 import state, { onChange } from '../../store';
+import { getMgnlApp } from 'nextjs-magnolia-connector';
+import { CategoryService } from 'ui-utils';
 import 'design-web-components';
 import 'ui-icons';
 
@@ -9,7 +11,7 @@ import 'ui-icons';
   shadow: true,
 })
 export class AvonHeader {
-  @Prop() content;
+  @Prop({ mutable: true, reflect: true }) content;
   @Prop() data;
   @State() categories;
   @State() settings;
@@ -20,21 +22,29 @@ export class AvonHeader {
   showCartHandler() {
     state.cartShown = true;
   }
+  async componentWillLoad() {
+    let settings, categories, cart, wishlist;
+    if (this.content) {
+      const data = JSON.parse(decodeURIComponent(this.content));
 
-  componentWillLoad() {
-    let str;
-    if (typeof Buffer !== 'undefined') {
-      const b = new Buffer(this.content, 'base64');
-      str = b.toString('utf8');
-    } else str = atob(this.content);
+      settings = data.settings;
+      categories = data.categories;
+    } else {
+      settings = await getMgnlApp({
+        lang: 'en',
+        country: 'GB',
+        endpoint: 'header',
+        site: 'avon',
+      });
+      categories = await CategoryService.getCategoryList('en', 'UK');
 
-    const { categories, settings, cart, wishlist } = JSON.parse(str);
+      this.content = encodeURIComponent(JSON.stringify({ settings, categories }));
+    }
     state.cart = cart;
-    state.wishlist = wishlist;
     this.categories = categories;
-    this.settings = settings;
     this.cartCount = cart?.lineItems.length;
     this.wishlistCount = wishlist?.lineItems.length;
+    this.settings = settings;
 
     onChange('cart', value => {
       this.cartCount = value?.lineItems.length;
