@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, State } from '@stencil/core';
 import 'design-web-components';
+import { priceFormatter } from 'ui-utils';
 import state, { onChange } from '../../store';
 
 export type LineItem = {
@@ -14,15 +15,6 @@ export type LineItem = {
   variant: {
     images: { url: string }[];
   };
-};
-
-const priceFormatter = n => {
-  const format = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
-  return format.format(n);
 };
 
 @Component({
@@ -56,13 +48,9 @@ export class CartSidebar {
   }
 
   render() {
+    const closeCallback = () => (state.cartShown = false);
     return (
-      <ui-modal
-        open={state.cartShown}
-        closeCallback={() => (state.cartShown = false)}
-        buttonlabel={this.cart?.lineItems.length ? 'View Bag' : 'Continue shopping'}
-        btncolor="primary"
-      >
+      <ui-modal open={state.cartShown} closeCallback={closeCallback} buttonlabel={this.cart?.lineItems.length ? 'View Bag' : 'Continue shopping'} btncolor="primary">
         <h1 slot="title">Cart</h1>
         {this.cart?.lineItems.length ? (
           <div class="content">

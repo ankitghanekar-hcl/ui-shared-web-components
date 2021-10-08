@@ -13,8 +13,9 @@ export class AvonFooter {
   @State() data;
 
   async componentWillLoad() {
-    if (this.content) this.data = JSON.parse(decodeURIComponent(this.content));
-    else {
+    if (this.content) {
+      this.data = JSON.parse(decodeURIComponent(this.content));
+    } else {
       this.data = await getMgnlApp({
         lang: 'en',
         country: 'GB',
