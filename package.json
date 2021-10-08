@@ -2,14 +2,11 @@
   "name": "shared-web-components",
   "version": "0.0.3",
   "description": "Shared web components",
+  "license": "MIT",
   "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
-  "types": "dist/custom-elements/index.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "collection:main": "dist/collection/index.js",
   "unpkg": "dist/stencil-boilerplate/stencil-boilerplate.esm.js",
+  "module": "dist/custom-elements/index.js",
+  "types": "dist/custom-elements/index.d.ts",
   "files": [
     "dist/",
     "loader/",
@@ -17,24 +14,21 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
-    "lint": "eslint src/**/*{.ts,.tsx}",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "build-storybook": "build-storybook",
     "generate": "stencil generate",
+    "lint": "eslint src/**/*{.ts,.tsx}",
     "prepare": "husky install",
+    "start": "stencil build --dev --watch --serve",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
-    "design-web-components": "./design-web-components-v0.0.3.tgz",
-    "nextjs-magnolia-connector": "./nextjs-magnolia-connector-v0.1.1.tgz",
-    "ui-icons": "file:ui-icons-v0.0.1.tgz",
-    "ui-utils": "./ui-utils-v1.0.0.tgz"
+    "nextjs-magnolia-connector": "./nextjs-magnolia-connector-v0.1.1.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -49,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-loader": "^8.2.2",
+    "design-web-components": "./design-web-components-v0.0.3.tgz",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-react": "^7.24.0",
@@ -58,7 +53,12 @@
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
     "puppeteer": "^10.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "ui-icons": "file:ui-icons-v0.0.1.tgz",
+    "ui-utils": "./ui-utils-v1.0.0.tgz"
   },
-  "license": "MIT"
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs"
 }
