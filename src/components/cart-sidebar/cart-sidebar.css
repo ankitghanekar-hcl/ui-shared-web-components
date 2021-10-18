@@ -6,7 +6,29 @@
 /* h3{
   color:#999;
 } */
-
+/* .close-button{
+  background-color: red;
+  color: #7f28c4;
+} */
+.close {
+  background-color: #7f28c4;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.close h1 {
+  color: white;
+  padding: 10px;
+}
+.cls {
+  --c-button-text: white;
+  --c-button-background: #7f28c4;
+  --c-button-border-radius: 50%;
+  --c-button-min-width: 50px;
+  --c-button-height: 50px;
+  --c-button-padding: 10px;
+  --c-button-display: 0;
+}
 .content {
   height: 80%;
   /* height: 100%; */
@@ -28,16 +50,18 @@
   display: flex;
   justify-content: space-between;
 }
-/* .displaytotal{
-  --c-color: #{$c-primary};
-} */
+
 .bottom-price .displaytotal {
   color: #7f28c4;
-  /* --c-color: #{$c-primary};
-  color: var(--c-color); */
 }
 .bottom {
   margin-top: auto;
   display: inline-block;
   width: 100%;
+}
+.button-text {
+  color: white;
+}
+.close {
+  --c-button-text: blue;
 }

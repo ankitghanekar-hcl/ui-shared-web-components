@@ -60,12 +60,16 @@ export class WishlistSidebar {
         open={state.wishlistShown}
         closeCallback={() => (state.wishlistShown = false)}
         buttonlabel={this.wishlist?.lineItems.length ? 'ADD ALL TO CART' : 'START shopping'}
-        btncolor="secondary"
+        btncolor="primary"
+        class="cls"
       >
         <h2 slot="title">My Wishlist</h2>
         <p slot="total">
           Total items: <b>{this.wishlist?.lineItems.length}</b>
         </p>
+        {/* < div slot="close-button" class="close">
+         <h1>&times;</h1>
+          </div> */}
         {this.wishlist?.lineItems.length ? (
           <div class="content">
             {/* <h3>Total items: {this.wishlist?.lineItems.length}</h3> */}
@@ -83,7 +87,7 @@ export class WishlistSidebar {
           </div>
         )}
         {this.wishlist?.lineItems.length && (
-          <p slot="bottom">
+          <p slot="bottom" class="bot-button">
             <div class="bottom-price">
               Total price:
               <span class="displaytotal">

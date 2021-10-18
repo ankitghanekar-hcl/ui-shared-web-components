@@ -32,7 +32,9 @@
     }
 
     &__button {
-      padding: 0;
+      // padding: 0;
+      // --c-button-padding:0;
+
       color: $c-text;
       background: transparent;
       transition: background 0.8s;

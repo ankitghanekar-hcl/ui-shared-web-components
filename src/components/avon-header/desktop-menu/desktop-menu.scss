@@ -88,9 +88,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--button-padding, $spacer-sm);
+    --c-button-padding: 0;
+    // padding: var(--button-padding, $spacer-sm);
     color: var(--button-color, $c-white);
-    background: var(--button-background, $c-primary);
+    // background: var(--button-background, $c-primary);
     transition: background 0.8s;
     background-position: 50%;
     text-decoration: none;
@@ -98,11 +99,12 @@
     border-radius: 0;
     white-space: nowrap;
     border-width: 0;
-
-    &-text {
+    padding: 0;
+    &text {
       --button-padding: 0;
       --button-background: transparent;
       --button-color: $c-text;
+      --c-button-display: inline;
       display: inline;
     }
 

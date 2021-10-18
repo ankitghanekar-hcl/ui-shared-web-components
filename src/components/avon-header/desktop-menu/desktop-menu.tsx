@@ -44,7 +44,7 @@ export class DesktopMenu {
                   <ui-icon icon={this.wishlistCount ? 'heartFilled' : 'heart'} size="12" />({this.wishlistCount})Wishlist
                 </span>
               </ui-button> */}
-              <ui-button shape="text" onClick={() => this.showWishlist.emit()}>
+              <ui-button class="button" shape="text" onClick={() => this.showWishlist.emit()}>
                 <div class="wishlistHeader">
                   <ui-icon icon="heart" size="12" color="#7f28c4" />
                   <span>({this.wishlistCount})Wishlist</span>

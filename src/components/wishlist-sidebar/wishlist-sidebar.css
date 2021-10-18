@@ -4,13 +4,28 @@
 /* h3{
     color:#999;
   } */
-
+.close {
+  --c-button-text: red;
+  color: #7f28c4;
+  /* border-radius: 50%;
+  width: 50px;
+  background-color: green; */
+}
+.cls {
+  --c-button-background: darkgray;
+  --c-button-text: white;
+  --c-button-border-radius: 50%;
+  --c-button-display: 0;
+  --c-button-min-width: 50px;
+  --c-button-height: 50px;
+}
 .content {
   height: 80%;
   /* height: 100%; */
   overflow: scroll;
   display: flex;
   flex-direction: column;
+  /* --c-button-text: red; */
 }
 .content::-webkit-scrollbar {
   display: none;
@@ -33,4 +48,7 @@
   margin-top: auto;
   display: inline-block;
   width: 100%;
+}
+.bot-button {
+  --c-button-background: black;
 }
