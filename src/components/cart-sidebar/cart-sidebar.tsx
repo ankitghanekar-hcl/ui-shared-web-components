@@ -69,14 +69,6 @@ export class CartSidebar {
         <p slot="total">
           Total items:<b>{this.cart?.lineItems.length}</b>
         </p>
-        {/* <div slot="close-button" class="close">
-          <h1>&times;</h1>
-          </div> */}
-        {/* <p slot="button-text">
-          <span class="button-text">
-        <h1>&times;</h1>
-        </span>
-        </p> */}
 
         {this.cart?.lineItems.length ? (
           <div class="content">
