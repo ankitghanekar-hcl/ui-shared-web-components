@@ -2,7 +2,7 @@ import { r as registerInstance, e as createEvent, h } from './index-304a2a43.js'
 import { s as state, o as onChange } from './store-b4f3ba75.js';
 
 const wishlistSidebarCss =
-  ':host{display:block}.close{--c-button-text:red;color:#7f28c4;}.cls{--c-button-background:darkgray;--c-button-text:white;--c-button-border-radius:50%;--c-button-display:0;--c-button-min-width:50px;--c-button-height:50px}.content{height:80%;overflow:scroll;display:flex;flex-direction:column;}.content::-webkit-scrollbar{display:none}.content center{display:flex;justify-content:center;}.bottom-price{display:flex;justify-content:space-between}.bottom-price .displaytotal{color:#7f28c4}.bottom{margin-top:auto;display:inline-block;width:100%}.bot-button{--c-button-background:black}';
+  ':host{display:block}.close{--c-button-text:red;color:#7f28c4;}.cls{--c-button-background:#e2197c;--c-button-text:white;--c-button-border-radius:50%;--c-button-display:0;--c-button-min-width:50px;--c-button-height:50px}.content{height:80%;overflow:scroll;display:flex;flex-direction:column;}.content::-webkit-scrollbar{display:none}.content center{display:flex;justify-content:center;}.ToCart{background-color:red}.AddToCart{--c-button-background:white;--c-button-border-radius:none;--c-button-min-width:100%;--c-button-text:black}.bottom-price{display:flex;justify-content:space-between}.bottom-price .displaytotal{color:#7f28c4}.bottom{margin-top:auto;display:inline-block;width:100%}.bot-button{--c-button-background:black}';
 
 const displayPrice = n => {
   const format = new Intl.NumberFormat('en-US', {
@@ -65,6 +65,11 @@ const WishlistSidebar = class {
                       },
                       'removeCallback=',
                       () => this.removeCallback(item),
+                      h(
+                        'p',
+                        { slot: 'ToCart', class: 'ToCart' },
+                        h('ui-button', { class: 'AddToCart', shape: 'text', onClick: this.removeCallback }, h('h2', null, h('u', null, 'Add to Cart'))),
+                      ),
                     );
                   })),
           )

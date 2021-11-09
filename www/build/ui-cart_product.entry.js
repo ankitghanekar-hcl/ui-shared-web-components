@@ -51,8 +51,14 @@ const UiCartProduct = class {
       'div',
       { class: 'product' },
       h('div', { class: 'img' }, h('ui-img', { src: this.image, width: this.imgwidth, height: this.imgheight, alt: this.imgalt })),
-      h('div', { class: 'title' }, h('ui-link', { link: this.link }, h('span', { class: 'link' }, this.heading)), h('h2', null, this.price)),
-      h('ui-button', { class: 'remove', shape: 'text', onClick: this.handleRemoveClick }, h('h1', null, '\u00D7')),
+      h(
+        'div',
+        { class: 'title' },
+        h('ui-link', { link: this.link }, h('span', { class: 'link' }, this.heading)),
+        h('h2', null, this.price),
+        h('div', { class: 'addCart' }, h('slot', { name: 'ToCart' })),
+      ),
+      h('ui-button', { class: 'remove', shape: 'text', onClick: this.handleRemoveClick }, h('ui-icon', { icon: 'close', size: '18', color: 'white' })),
     );
   }
 };

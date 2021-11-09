@@ -12,7 +12,8 @@
   background-color: green; */
 }
 .cls {
-  --c-button-background: darkgray;
+  /* --c-button-background: darkgray; */
+  --c-button-background: #e2197c;
   --c-button-text: white;
   --c-button-border-radius: 50%;
   --c-button-display: 0;
@@ -36,6 +37,15 @@
   justify-content: center;
   /* height: 100px;
     overflow:auto; */
+}
+.ToCart {
+  background-color: red;
+}
+.AddToCart {
+  --c-button-background: white;
+  --c-button-border-radius: none;
+  --c-button-min-width: 100%;
+  --c-button-text: black;
 }
 .bottom-price {
   display: flex;

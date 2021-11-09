@@ -74,6 +74,21 @@ const icons = {
       }),
     ),
   },
+  close: {
+    viewBox: '-0.5 -0.5 13 13',
+    content: h(
+      'g',
+      null,
+      h('path', {
+        fill: 'currentColor',
+        d: 'M0.6,12c-0.1,0-0.3-0.1-0.4-0.2c-0.2-0.2-0.2-0.6,0-0.8L11.1,0.2c0.2-0.2,0.6-0.2,0.8,0s0.2,0.6,0,0.8   L0.9,11.8C0.8,11.9,0.7,12,0.6,12z',
+      }),
+      h('path', {
+        fill: 'currentColor',
+        d: 'M11.4,12c-0.1,0-0.3-0.1-0.4-0.2L0.2,0.9c-0.2-0.2-0.2-0.6,0-0.8s0.6-0.2,0.8,0l10.9,10.9   c0.2,0.2,0.2,0.6,0,0.8C11.7,11.9,11.6,12,11.4,12z',
+      }),
+    ),
+  },
 };
 
 const uiIconCss = ':host{display:inline;color:var(--c-icon, #7f28c4)}svg{height:var(--icon-size, 24px)}';

@@ -39,6 +39,7 @@ export class WishlistSidebar {
     bubbles: true,
   })
   removeItem: EventEmitter<LineItem>;
+
   componentWillLoad() {
     this.wishlist = state.wishlist;
     onChange('wishlist', value => {
@@ -77,6 +78,14 @@ export class WishlistSidebar {
               this.wishlist?.lineItems.map(item => (
                 <ui-cart_product image={item.variant.images[0].url} heading={item.name} price={displayPrice(item.variant.price?.value.centAmount / 100)}>
                   removeCallback={() => this.removeCallback(item)}
+                  <p slot="ToCart" class="ToCart">
+                    <ui-button class="AddToCart" shape="text" onClick={this.removeCallback}>
+                      <h2>
+                        <u>Add to Cart</u>
+                      </h2>
+                    </ui-button>
+                    {/* <h1>Add To Cart</h1> */}
+                  </p>
                 </ui-cart_product>
               ))}
             {/* <h3 class="bottom">Total price: {this.getTotalPrice()}</h3> */}
