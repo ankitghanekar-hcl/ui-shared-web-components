@@ -11,11 +11,8 @@ export class CategoryNav {
   @State() childData = [];
   @State() hovered = false;
 
-  mouseOver(data, parentSlug) {
-    this.childData = data.map(cat => ({
-      ...cat,
-      url: `/${parentSlug}/${cat.slug}`,
-    }));
+  mouseOver(data) {
+    this.childData = data;
     this.hovered = true;
   }
 
@@ -24,9 +21,9 @@ export class CategoryNav {
       <div class="category_navigation">
         <ul>
           {this.categories.map(category => (
-            <li key={category.id} onMouseOver={() => this.mouseOver(category.children, category.slug)} onMouseOut={() => (this.hovered = false)}>
-              <ui-link link={category.slug ? `/c/${category.slug}` : '#'}>
-                <span>{category.name}</span>
+            <li key={category.key} onMouseOver={() => this.mouseOver(category.subcategories)} onMouseOut={() => (this.hovered = false)}>
+              <ui-link link={category.attributes.url[0]}>
+                <span>{category.displayName}</span>
               </ui-link>
             </li>
           ))}
@@ -35,9 +32,9 @@ export class CategoryNav {
           <ul class="subCat">
             <li class="heading">Categories</li>
             {this.childData.map(subCat => (
-              <li key={subCat.id}>
-                <ui-link link={`/c${subCat.url}`}>
-                  <span>{subCat.name}</span>
+              <li key={subCat.key}>
+                <ui-link link={subCat.attributes.url[0]}>
+                  <span>{subCat.displayName}</span>
                 </ui-link>
               </li>
             ))}

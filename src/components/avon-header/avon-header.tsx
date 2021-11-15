@@ -1,7 +1,7 @@
 import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
 import state, { onChange } from '../../store';
 import { getMgnlApp } from 'nextjs-magnolia-connector';
-import { CategoryService } from 'ui-utils';
+import { ApptusService } from 'ui-utils';
 import 'design-web-components';
 import 'ui-icons';
 
@@ -36,7 +36,7 @@ export class AvonHeader {
         endpoint: 'header',
         site: 'avon',
       });
-      categories = await CategoryService.getCategoryList('en', 'UK');
+      categories = await ApptusService.getNavigation();
 
       this.content = encodeURIComponent(JSON.stringify({ settings, categories }));
     }

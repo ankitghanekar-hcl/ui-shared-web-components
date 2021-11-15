@@ -1,6 +1,13 @@
 import { Component, h, State, Prop, Event, EventEmitter } from '@stencil/core';
 import 'design-web-components';
 
+export type Category = {
+  id: string;
+  name: string;
+  slug: string;
+  children: Category[];
+};
+
 @Component({
   tag: 'mobile-menu',
   styleUrl: 'mobile-menu.scss',
@@ -56,22 +63,18 @@ export class MobileMenu {
                 <div class="top_navigation">
                   <ul class="mobNav" id="nav">
                     {this.categoryList.map(category => (
-                      <li key={category.id} onClick={e => this.toggleSubMenu(e)}>
-                        {category.name} &rarr;
+                      <li key={category.key} onClick={e => this.toggleSubMenu(e)}>
+                        {category.displayName} &rarr;
                         <ul class="mobNav__child">
-                          <div class="goBackMenu">&larr; {category.name}</div>
-                          {category.slug && (
+                          <div class="goBackMenu">&larr; {category.displayName}</div>
+                          {category.attributes.url[0] && (
                             <li>
-                              <ui-link link={`/c/${category.slug}`}>All {category.name}</ui-link>
+                              <ui-link link={category.attributes.url[0]}>All {category.displayName}</ui-link>
                             </li>
                           )}
-                          {category.children.map(subCategory => (
-                            <li key={subCategory.id}>
-                              {category.slug ? (
-                                <ui-link link={`/c/${category.slug}/${subCategory.slug}`}>{subCategory.name}</ui-link>
-                              ) : (
-                                <ui-link link={`/c/${subCategory.slug}`}>{subCategory.name}</ui-link>
-                              )}
+                          {category.subcategories.map(subCategory => (
+                            <li key={subCategory.key}>
+                              <ui-link link={category.attributes.url[0]}>{subCategory.name}</ui-link>
                             </li>
                           ))}
                         </ul>
