@@ -1,0 +1,165 @@
+@import 'scss/variables';
+
+:host {
+  display: block;
+}
+.blue {
+  width: 100%;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1b8df2 0% 0% no-repeat padding-box;
+  border: none;
+  color: white;
+}
+
+.MyButton {
+  width: 100%;
+  font-weight: 800;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /** Size **/
+  &.large {
+    padding: 12px;
+  }
+  &.medium {
+    padding: 8px;
+  }
+  &.small {
+    padding: 4px;
+  }
+  &.fullwidth {
+    width: 100%;
+  }
+  &.mediumwidth {
+    width: 50%;
+  }
+  &.smallwidth {
+    width: 25%;
+  }
+  /** Colors **/
+  &.primary {
+    background: black 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      background-color: #c;
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:active {
+      background-color: black;
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:disabled {
+      background-color: #d6d6d6;
+      color: #a3a3a3;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  &.secondary {
+    background: $c-primary;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      background-color: #6a17ad;
+      color: white;
+    }
+
+    &:active {
+      background-color: $c-primary;
+      color: #45a3f5;
+    }
+    &:disabled {
+      border-color: #d6d6d6;
+      color: #a3a3a3;
+      background-color: #f7f7f7;
+      cursor: not-allowed;
+    }
+  }
+  &.clear {
+    background: none;
+    border: $c-primary 1px solid;
+    color: $c-primary;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:active {
+      background-color: none;
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:disabled {
+      background-color: #d6d6d6;
+      color: #a3a3a3;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  &.light {
+    background: none;
+    border: black 1px solid;
+    color: black;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:active {
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:disabled {
+      background-color: #d6d6d6;
+      color: #a3a3a3;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  /** Shape **/
+  &.full {
+    border-radius: none;
+  }
+  &.round {
+    // border-radius: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    // min-width: 56px;
+    min-width: 50px;
+    height: 50px;
+  }
+  &.smooth {
+    border-radius: 4px;
+  }
+  &.text {
+    font-weight: normal;
+    background: transparent;
+    color: var(--c-button-text, $c-text);
+    display: inline;
+    padding: 0;
+    border: none;
+    width: auto;
+    &:hover,
+    &:focus {
+      color: $c-primary;
+      background-color: $c-white;
+      box-shadow: none;
+    }
+  }
+
+  /** Elevation **/
+  &.elevation {
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, $alpha: 0.3);
+  }
+}

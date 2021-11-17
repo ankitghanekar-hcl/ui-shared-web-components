@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
-import 'design-web-components';
 
 @Component({
   tag: 'desktop-menu',

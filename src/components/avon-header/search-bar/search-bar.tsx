@@ -1,5 +1,4 @@
 import { Component, h } from '@stencil/core';
-import 'design-web-components';
 
 @Component({
   tag: 'search-bar',

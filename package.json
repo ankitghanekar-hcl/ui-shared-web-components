@@ -31,9 +31,7 @@
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
-    "design-web-components": "./design-web-components-v0.0.3.tgz",
     "nextjs-magnolia-connector": "./nextjs-magnolia-connector-v0.1.1.tgz",
-    "ui-icons": "file:ui-icons-v0.0.1.tgz",
     "ui-utils": "./ui-utils-v1.0.0.tgz"
   },
   "devDependencies": {

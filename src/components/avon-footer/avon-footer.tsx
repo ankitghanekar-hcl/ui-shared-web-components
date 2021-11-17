@@ -1,6 +1,5 @@
 import { Component, Prop, h, State } from '@stencil/core';
 import { getMgnlApp } from 'nextjs-magnolia-connector';
-import 'design-web-components';
 
 @Component({
   tag: 'avon-footer',

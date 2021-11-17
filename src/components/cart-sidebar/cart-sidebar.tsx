@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, h, State } from '@stencil/core';
-import 'design-web-components';
 import { priceFormatter } from 'ui-utils';
 import state, { onChange } from '../../store';
 

@@ -1,0 +1,8 @@
+:host {
+  display: inline;
+  color: var(--c-icon, #7f28c4);
+}
+
+svg {
+  height: var(--icon-size, 24px);
+}
