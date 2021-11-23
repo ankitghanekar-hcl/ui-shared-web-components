@@ -1,7 +1,7 @@
 import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
 import state, { onChange } from '../../store';
 import { getMgnlApp } from 'nextjs-magnolia-connector';
-import { ApptusService } from '../../services/apptus';
+import ApptusService from '../../services/apptus';
 
 @Component({
   tag: 'avon-header',
