@@ -28,6 +28,10 @@
 
 ## Dependencies
 
+### Used by
+
+- [cart-sidebar](../cart-sidebar)
+
 ### Depends on
 
 - [ui-button](../ui-button)
@@ -37,6 +41,7 @@
 ```mermaid
 graph TD;
   ui-modal --> ui-button
+  cart-sidebar --> ui-modal
   style ui-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

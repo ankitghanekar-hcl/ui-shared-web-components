@@ -24,9 +24,10 @@
 
 ### Depends on
 
-- ui-link
-- ui-img
-- ui-button
+- [ui-link](../../ui-link)
+- [ui-img](../../ui-img)
+- [ui-icon](../../ui-icon)
+- [ui-button](../../ui-button)
 - [search-bar](../search-bar)
 
 ### Graph
@@ -35,10 +36,12 @@
 graph TD;
   mobile-menu --> ui-link
   mobile-menu --> ui-img
+  mobile-menu --> ui-icon
   mobile-menu --> ui-button
   mobile-menu --> search-bar
   search-bar --> ui-textbox
   search-bar --> ui-button
+  search-bar --> ui-icon
   avon-header --> mobile-menu
   style mobile-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```

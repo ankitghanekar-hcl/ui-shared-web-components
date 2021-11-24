@@ -11,8 +11,9 @@
 
 ### Depends on
 
-- ui-textbox
-- ui-button
+- [ui-textbox](../../ui-textbox)
+- [ui-button](../../ui-button)
+- [ui-icon](../../ui-icon)
 
 ### Graph
 
@@ -20,6 +21,7 @@
 graph TD;
   search-bar --> ui-textbox
   search-bar --> ui-button
+  search-bar --> ui-icon
   desktop-menu --> search-bar
   mobile-menu --> search-bar
   style search-bar fill:#f9f,stroke:#333,stroke-width:4px

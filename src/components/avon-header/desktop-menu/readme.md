@@ -26,8 +26,9 @@
 ### Depends on
 
 - [search-bar](../search-bar)
-- ui-button
-- ui-link
+- [ui-button](../../ui-button)
+- [ui-icon](../../ui-icon)
+- [ui-link](../../ui-link)
 - [category-nav](../category-nav)
 
 ### Graph
@@ -36,10 +37,12 @@
 graph TD;
   desktop-menu --> search-bar
   desktop-menu --> ui-button
+  desktop-menu --> ui-icon
   desktop-menu --> ui-link
   desktop-menu --> category-nav
   search-bar --> ui-textbox
   search-bar --> ui-button
+  search-bar --> ui-icon
   category-nav --> ui-link
   avon-header --> desktop-menu
   style desktop-menu fill:#f9f,stroke:#333,stroke-width:4px

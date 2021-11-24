@@ -2,25 +2,24 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property     | Attribute | Description | Type    | Default |
 | ------------ | --------- | ----------- | ------- | ------- |
 | `categories` | --        |             | `any[]` | `[]`    |
 
-
 ## Dependencies
 
 ### Used by
 
- - [desktop-menu](../desktop-menu)
+- [desktop-menu](../desktop-menu)
 
 ### Depends on
 
-- ui-link
+- [ui-link](../../ui-link)
 
 ### Graph
+
 ```mermaid
 graph TD;
   category-nav --> ui-link
@@ -28,6 +27,6 @@ graph TD;
   style category-nav fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

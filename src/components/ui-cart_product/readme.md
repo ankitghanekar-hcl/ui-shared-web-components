@@ -23,6 +23,10 @@
 
 ## Dependencies
 
+### Used by
+
+- [cart-sidebar](../cart-sidebar)
+
 ### Depends on
 
 - [ui-img](../ui-img)
@@ -36,6 +40,7 @@ graph TD;
   ui-cart_product --> ui-img
   ui-cart_product --> ui-link
   ui-cart_product --> ui-button
+  cart-sidebar --> ui-cart_product
   style ui-cart_product fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

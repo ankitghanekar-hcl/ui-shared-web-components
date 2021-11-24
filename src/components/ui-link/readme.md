@@ -18,12 +18,24 @@
 
 ### Used by
 
+- [avon-footer](../avon-footer)
+- [bottom-navigation](../bottom-navigation)
+- [category-nav](../avon-header/category-nav)
+- [desktop-menu](../avon-header/desktop-menu)
+- [mobile-menu](../avon-header/mobile-menu)
+- [top-bar](../avon-header/top-bar)
 - [ui-cart_product](../ui-cart_product)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  avon-footer --> ui-link
+  bottom-navigation --> ui-link
+  category-nav --> ui-link
+  desktop-menu --> ui-link
+  mobile-menu --> ui-link
+  top-bar --> ui-link
   ui-cart_product --> ui-link
   style ui-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
