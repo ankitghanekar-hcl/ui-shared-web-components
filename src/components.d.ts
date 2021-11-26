@@ -8,10 +8,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { LineItem } from './components/cart-sidebar/cart-sidebar';
 import { ModalEvent } from './components/ui-modal/ui-modal';
 export namespace Components {
-  interface AvonFooter {
-    content: any;
-    isDark: boolean;
-  }
   interface AvonHeader {
     content: any;
     data: any;
@@ -243,11 +239,6 @@ export namespace Components {
   }
 }
 declare global {
-  interface HTMLAvonFooterElement extends Components.AvonFooter, HTMLStencilElement {}
-  var HTMLAvonFooterElement: {
-    prototype: HTMLAvonFooterElement;
-    new (): HTMLAvonFooterElement;
-  };
   interface HTMLAvonHeaderElement extends Components.AvonHeader, HTMLStencilElement {}
   var HTMLAvonHeaderElement: {
     prototype: HTMLAvonHeaderElement;
@@ -329,7 +320,6 @@ declare global {
     new (): HTMLUiTextboxElement;
   };
   interface HTMLElementTagNameMap {
-    'avon-footer': HTMLAvonFooterElement;
     'avon-header': HTMLAvonHeaderElement;
     'bottom-navigation': HTMLBottomNavigationElement;
     'cart-sidebar': HTMLCartSidebarElement;
@@ -349,10 +339,6 @@ declare global {
   }
 }
 declare namespace LocalJSX {
-  interface AvonFooter {
-    content?: any;
-    isDark?: boolean;
-  }
   interface AvonHeader {
     content?: any;
     data?: any;
@@ -588,7 +574,6 @@ declare namespace LocalJSX {
     width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
   }
   interface IntrinsicElements {
-    'avon-footer': AvonFooter;
     'avon-header': AvonHeader;
     'bottom-navigation': BottomNavigation;
     'cart-sidebar': CartSidebar;
@@ -611,7 +596,6 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
-      'avon-footer': LocalJSX.AvonFooter & JSXBase.HTMLAttributes<HTMLAvonFooterElement>;
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
       'bottom-navigation': LocalJSX.BottomNavigation & JSXBase.HTMLAttributes<HTMLBottomNavigationElement>;
       'cart-sidebar': LocalJSX.CartSidebar & JSXBase.HTMLAttributes<HTMLCartSidebarElement>;

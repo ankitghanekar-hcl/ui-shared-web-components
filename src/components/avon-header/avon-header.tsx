@@ -1,7 +1,6 @@
 import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
 import state, { onChange } from '../../store';
 import { getMgnlApp } from 'nextjs-magnolia-connector';
-import ApptusService from '../../services/apptus';
 
 @Component({
   tag: 'avon-header',
@@ -34,7 +33,7 @@ export class AvonHeader {
         endpoint: 'header',
         site: 'avon',
       });
-      categories = await ApptusService.getNavigation();
+      // categories = await ApptusService.getNavigation();
 
       this.content = encodeURIComponent(JSON.stringify({ settings, categories }));
     }

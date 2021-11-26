@@ -18,7 +18,6 @@
 
 ### Used by
 
-- [avon-footer](../avon-footer)
 - [bottom-navigation](../bottom-navigation)
 - [category-nav](../avon-header/category-nav)
 - [desktop-menu](../avon-header/desktop-menu)
@@ -30,7 +29,6 @@
 
 ```mermaid
 graph TD;
-  avon-footer --> ui-link
   bottom-navigation --> ui-link
   category-nav --> ui-link
   desktop-menu --> ui-link
