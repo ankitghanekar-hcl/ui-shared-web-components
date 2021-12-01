@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { LineItem } from './components/cart-sidebar/cart-sidebar';
 import { ModalEvent } from './components/ui-modal/ui-modal';
 export namespace Components {
   interface AvonHeader {
@@ -13,7 +12,6 @@ export namespace Components {
     data: any;
   }
   interface BottomNavigation {}
-  interface CartSidebar {}
   interface CategoryNav {
     categories: any[];
   }
@@ -64,64 +62,6 @@ export namespace Components {
     shape?: 'full' | 'round' | 'smooth' | 'text';
     size?: 'large' | 'medium' | 'small';
     width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
-  }
-  interface UiCart_product {
-    /**
-     * box bgcolor
-     */
-    boxbgcolor: string;
-    /**
-     * box height
-     */
-    boxheight: string;
-    /**
-     * box width
-     */
-    boxwidth: string;
-    /**
-     * Product Heading
-     */
-    heading: string;
-    /**
-     * Image src
-     */
-    image: string;
-    /**
-     * image alt
-     */
-    imgalt: string;
-    /**
-     * image height
-     */
-    imgheight: string;
-    /**
-     * image width
-     */
-    imgwidth: string;
-    /**
-     * link
-     */
-    link: string;
-    /**
-     * price
-     */
-    price: string;
-    /**
-     * removeCallback works only in Stencil components
-     */
-    removeCallback?: Function;
-    /**
-     * titlecolor
-     */
-    titlecolor: string;
-    /**
-     * title fontfamily
-     */
-    titlefontfamily: string;
-    /**
-     * title fontsize
-     */
-    titlefontsize: string;
   }
   interface UiIcon {
     color?: any;
@@ -249,11 +189,6 @@ declare global {
     prototype: HTMLBottomNavigationElement;
     new (): HTMLBottomNavigationElement;
   };
-  interface HTMLCartSidebarElement extends Components.CartSidebar, HTMLStencilElement {}
-  var HTMLCartSidebarElement: {
-    prototype: HTMLCartSidebarElement;
-    new (): HTMLCartSidebarElement;
-  };
   interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {}
   var HTMLCategoryNavElement: {
     prototype: HTMLCategoryNavElement;
@@ -289,11 +224,6 @@ declare global {
     prototype: HTMLUiButtonElement;
     new (): HTMLUiButtonElement;
   };
-  interface HTMLUiCart_productElement extends Components.UiCart_product, HTMLStencilElement {}
-  var HTMLUiCart_productElement: {
-    prototype: HTMLUiCart_productElement;
-    new (): HTMLUiCart_productElement;
-  };
   interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {}
   var HTMLUiIconElement: {
     prototype: HTMLUiIconElement;
@@ -322,7 +252,6 @@ declare global {
   interface HTMLElementTagNameMap {
     'avon-header': HTMLAvonHeaderElement;
     'bottom-navigation': HTMLBottomNavigationElement;
-    'cart-sidebar': HTMLCartSidebarElement;
     'category-nav': HTMLCategoryNavElement;
     'desktop-menu': HTMLDesktopMenuElement;
     'mobile-menu': HTMLMobileMenuElement;
@@ -330,7 +259,6 @@ declare global {
     'top-bar': HTMLTopBarElement;
     'ui-box_container': HTMLUiBox_containerElement;
     'ui-button': HTMLUiButtonElement;
-    'ui-cart_product': HTMLUiCart_productElement;
     'ui-icon': HTMLUiIconElement;
     'ui-img': HTMLUiImgElement;
     'ui-link': HTMLUiLinkElement;
@@ -344,9 +272,6 @@ declare namespace LocalJSX {
     data?: any;
   }
   interface BottomNavigation {}
-  interface CartSidebar {
-    'onCart:removeItem'?: (event: CustomEvent<LineItem>) => void;
-  }
   interface CategoryNav {
     categories?: any[];
   }
@@ -399,64 +324,6 @@ declare namespace LocalJSX {
     shape?: 'full' | 'round' | 'smooth' | 'text';
     size?: 'large' | 'medium' | 'small';
     width?: 'fullwidth' | 'mediumwidth' | 'smallwidth';
-  }
-  interface UiCart_product {
-    /**
-     * box bgcolor
-     */
-    boxbgcolor?: string;
-    /**
-     * box height
-     */
-    boxheight?: string;
-    /**
-     * box width
-     */
-    boxwidth?: string;
-    /**
-     * Product Heading
-     */
-    heading?: string;
-    /**
-     * Image src
-     */
-    image?: string;
-    /**
-     * image alt
-     */
-    imgalt?: string;
-    /**
-     * image height
-     */
-    imgheight?: string;
-    /**
-     * image width
-     */
-    imgwidth?: string;
-    /**
-     * link
-     */
-    link?: string;
-    /**
-     * price
-     */
-    price?: string;
-    /**
-     * removeCallback works only in Stencil components
-     */
-    removeCallback?: Function;
-    /**
-     * titlecolor
-     */
-    titlecolor?: string;
-    /**
-     * title fontfamily
-     */
-    titlefontfamily?: string;
-    /**
-     * title fontsize
-     */
-    titlefontsize?: string;
   }
   interface UiIcon {
     color?: any;
@@ -576,7 +443,6 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'avon-header': AvonHeader;
     'bottom-navigation': BottomNavigation;
-    'cart-sidebar': CartSidebar;
     'category-nav': CategoryNav;
     'desktop-menu': DesktopMenu;
     'mobile-menu': MobileMenu;
@@ -584,7 +450,6 @@ declare namespace LocalJSX {
     'top-bar': TopBar;
     'ui-box_container': UiBox_container;
     'ui-button': UiButton;
-    'ui-cart_product': UiCart_product;
     'ui-icon': UiIcon;
     'ui-img': UiImg;
     'ui-link': UiLink;
@@ -598,7 +463,6 @@ declare module '@stencil/core' {
     interface IntrinsicElements {
       'avon-header': LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
       'bottom-navigation': LocalJSX.BottomNavigation & JSXBase.HTMLAttributes<HTMLBottomNavigationElement>;
-      'cart-sidebar': LocalJSX.CartSidebar & JSXBase.HTMLAttributes<HTMLCartSidebarElement>;
       'category-nav': LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
       'desktop-menu': LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
       'mobile-menu': LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;
@@ -606,7 +470,6 @@ declare module '@stencil/core' {
       'top-bar': LocalJSX.TopBar & JSXBase.HTMLAttributes<HTMLTopBarElement>;
       'ui-box_container': LocalJSX.UiBox_container & JSXBase.HTMLAttributes<HTMLUiBox_containerElement>;
       'ui-button': LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
-      'ui-cart_product': LocalJSX.UiCart_product & JSXBase.HTMLAttributes<HTMLUiCart_productElement>;
       'ui-icon': LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
       'ui-img': LocalJSX.UiImg & JSXBase.HTMLAttributes<HTMLUiImgElement>;
       'ui-link': LocalJSX.UiLink & JSXBase.HTMLAttributes<HTMLUiLinkElement>;

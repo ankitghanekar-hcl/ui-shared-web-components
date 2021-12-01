@@ -22,9 +22,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -38,10 +36,6 @@
     "@stencil/eslint-plugin": "^0.3.1",
     "@stencil/sass": "^1.4.1",
     "@stencil/store": "^1.4.1",
-    "@storybook/addon-actions": "^6.3.7",
-    "@storybook/addon-essentials": "^6.3.7",
-    "@storybook/addon-links": "^6.3.7",
-    "@storybook/html": "^6.3.7",
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
@@ -56,9 +50,6 @@
     "prettier": "2.3.2",
     "puppeteer": "^10.0.0",
     "typescript": "^4.3.5"
-  },
-  "resolutions": {
-    "ui-utils": "./ui-utils-v1.0.0.tgz"
   },
   "license": "MIT"
 }
