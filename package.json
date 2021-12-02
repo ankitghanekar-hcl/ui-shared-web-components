@@ -11,6 +11,7 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/stencil-boilerplate/stencil-boilerplate.esm.js",
   "files": [
+    "scss/",
     "dist/",
     "loader/",
     "hydrate"
