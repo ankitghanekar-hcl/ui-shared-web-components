@@ -5,16 +5,13 @@ describe('ui-box_container', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UiBox_Container],
-      html: `<ui-box_container></ui-box_container>`,
+      html: `<ui-box_container backgroundcolor="white" width="100%" height="300px"></ui-box_container>`,
+      supportsShadowDom: true,
     });
-    expect(page.root).toEqualHtml(`
-      <ui-box_container>
-        <mock:shadow-root>
-          <div style="background-color: white; width: 100%; height: 300px;">
+    expect(page.root.shadowRoot).toEqualHtml(`
+          <div style="background-color: white; background-image: url(); width: 100%; height: 300px;  display: block;">
             <slot></slot>
           </div>
-        </mock:shadow-root>
-      </ui-box_container>
     `);
   });
 });

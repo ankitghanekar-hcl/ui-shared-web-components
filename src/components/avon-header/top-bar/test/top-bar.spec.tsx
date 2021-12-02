@@ -6,30 +6,8 @@ describe('top-bar', () => {
     const page = await newSpecPage({
       components: [TopBar],
       html: `<top-bar></top-bar>`,
+      supportsShadowDom: true,
     });
-    expect(page.root).toEqualHtml(`
-      <top-bar>
-        <mock:shadow-root>
-          <div class="topbar">
-           <div class="rep">
-             <ui-link link="/rep">
-               <span class="topbar-link"></span>
-             </ui-link>
-             <span>
-               |
-             </span>
-             <ui-link link="#">
-               <span class="topbar-link"></span>
-             </ui-link>
-           </div>
-           <div>
-             <ui-link link="#">
-               <span class="topbar-link"></span>
-             </ui-link>
-           </div>
-         </div>
-        </mock:shadow-root>
-      </top-bar>
-    `);
+    expect(page.root.shadowRoot.querySelectorAll('ui-link').length).toEqual(3);
   });
 });
