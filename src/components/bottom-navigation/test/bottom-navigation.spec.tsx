@@ -6,13 +6,8 @@ describe('bottom-navigation', () => {
     const page = await newSpecPage({
       components: [BottomNavigation],
       html: `<bottom-navigation></bottom-navigation>`,
+      supportsShadowDom: true,
     });
-    expect(page.root).toEqualHtml(`
-      <bottom-navigation>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </bottom-navigation>
-    `);
+    expect(page.root.shadowRoot.querySelectorAll('div.item').length).toEqual(4);
   });
 });

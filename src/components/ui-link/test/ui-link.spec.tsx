@@ -5,16 +5,13 @@ describe('ui-link', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UiLink],
-      html: `<ui-link></ui-link>`,
+      html: `<ui-link fontsize="12px"></ui-link>`,
+      supportsShadowDom: true,
     });
-    expect(page.root).toEqualHtml(`
-      <ui-link>
-        <mock:shadow-root>
-          <a style="font-size: 12px; text-decoration: none; color: #7f28c4; font-weight: 100; font-family: Montserrat,Arial,serif;">
+    expect(page.root.shadowRoot).toEqualHtml(`
+          <a style="font-size: 12px;">
             <slot></slot>
           </a>
-        </mock:shadow-root>
-      </ui-link>
     `);
   });
 });
